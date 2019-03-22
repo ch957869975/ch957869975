@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Psycho">
 <meta property="og:description" content="hotkey.js 的使用在一个小项目中遇到了快捷键的小需求，所以选择了 hotkey.js。目前该项目的 star 数 3277。 安装1npm install hotkeys-js --save 注意我们是要在线上仍然使用这个 js 库，所以并不是安装到开发依赖中。  用法1234567891011121314151617181920212223import hotkeys from &apos;hot">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-18T06:55:55.000Z">
+<meta property="og:updated_time" content="2019-02-18T06:56:33.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hotkey.js 的使用">
 <meta name="twitter:description" content="hotkey.js 的使用在一个小项目中遇到了快捷键的小需求，所以选择了 hotkey.js。目前该项目的 star 数 3277。 安装1npm install hotkeys-js --save 注意我们是要在线上仍然使用这个 js 库，所以并不是安装到开发依赖中。  用法1234567891011121314151617181920212223import hotkeys from &apos;hot">
@@ -407,7 +407,7 @@
 <h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hotkeys <span class="keyword">from</span> <span class="string">'hotkeys-js'</span></span><br><span class="line"></span><br><span class="line">hotkeys(<span class="string">'f5'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event, handler</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Prevent the default refresh event under WINDOWS system</span></span><br><span class="line">  event.preventDefault()</span><br><span class="line">  alert(<span class="string">'you pressed F5!'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">hotkeys(<span class="string">'ctrl+a,ctrl+b,r,f'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event, handler</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (handler.key) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'ctrl+a'</span>:</span><br><span class="line">      alert(<span class="string">'you pressed ctrl+a!'</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">'ctrl+b'</span>:</span><br><span class="line">      alert(<span class="string">'you pressed ctrl+b!'</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">'r'</span>:</span><br><span class="line">      alert(<span class="string">'you pressed r!'</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">'f'</span>:</span><br><span class="line">      alert(<span class="string">'you pressed f!'</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>我的需求是多组跨快捷键的定义，所以写法我采用的是第二种。</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p><code>hotkey</code>默认不监听 <code>input</code> <code>select</code> <code>textarea</code>，即元素获取焦点时不触发定义的快捷键。<br>要想达到监听的需求，需要写一句这样的代码<br><code>hotkeys.filter = () =&gt; true</code>，将所有情况全部返回 true</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>用这个库我成功的为自己的 markdown 在线编辑器添加了快捷键功能。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>用这个库我成功的为自己的 markdown 在线编辑器添加了快捷键功能。<a href="https://ch957869975.github.io/md-editor/dist/">编辑器地址</a></p>
 
       
     </div>
@@ -447,6 +447,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hexo-blog/2019/03/22/junjin/" rel="prev" title="掘金小测分销图">
+                掘金小测分销图 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -530,7 +534,7 @@
               
                 <a href="/hexo-blog/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -541,7 +545,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/hexo-blog/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -552,7 +556,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hexo-blog/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

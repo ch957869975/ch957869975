@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fzwrrjy0n8j30r20e6749.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fzws1zecqlj30gy0daq2z.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fzwsje9evbj30ew0dwmx6.jpg">
-<meta property="og:updated_time" content="2019-11-27T02:58:39.034Z">
+<meta property="og:updated_time" content="2019-11-27T03:14:26.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【webpack学习之路】2. 配置加载css&#x2F;图片&#x2F;字体">
 <meta name="twitter:description" content="加载 css，图片，字体 简单配置上一步对 webpack 入口和出口进行了简单配置，并成功引用。上一步的配置参考 配置加载 css在 webpack 中，所有的文件均被视为模块。特定类型的模块需要特定的解释器来解释，这种解释机制被称为loader。对 css 而言，需要用到style-loader与css-loader。先安装这两个 loader 1npm i css-loader style-">
@@ -169,6 +169,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i css-loader style-loader -D</span><br></pre></td></tr></table></figure>
 <h3 id="配置-loader"><a href="#配置-loader" class="headerlink" title="配置 loader"></a>配置 loader</h3><p>在<code>webpack.config.js</code>中配置 <code>loader</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">"./src/index.js"</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">"bundle.js"</span>,</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"dist"</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css$/</span>, <span class="comment">//使用正则表达式匹配某种类型的文件，这里配置的是后缀为css的文件</span></span><br><span class="line">        use: [<span class="string">"style-loader"</span>, <span class="string">"css-loader"</span>] <span class="comment">//loader名称</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>配好之后，就可以在 js 中通过 import 导入你想加载的 css 文件了，在<code>src</code>下新建<code>style.css</code></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hello</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>index.html</code>与上一文章相同</p>
@@ -294,15 +295,18 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2019 芬达
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+      <div class="footer-left">
+        &copy; 2019 芬达
+      </div>
+      <div class="footer-right">
+        <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+        by Litten
+      </div>
     </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -370,15 +374,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -398,15 +402,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">掘金</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">懒加载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">掘金</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -419,10 +423,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaScript2</a>
               </li>
             
             <div class="clearfix"></div>

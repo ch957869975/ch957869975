@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="记事本">
 <meta property="og:description" content="浅析 let 与 const今天学习一下 ES6 的两种声明方式，得先从说var说起, 先说var12345678if (a === true) &amp;#123;  var value = 1&amp;#125;// 可以变形成var valueif (a === true) &amp;#123;  value = 1&amp;#125; 只要不是新手，都应该明白这两个代码块是相等的。为什么呢,因为var声明存在变量提升，此">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-27T02:58:06.632Z">
+<meta property="og:updated_time" content="2019-11-27T03:06:27.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6 之 let &amp; const">
 <meta name="twitter:description" content="浅析 let 与 const今天学习一下 ES6 的两种声明方式，得先从说var说起, 先说var12345678if (a === true) &amp;#123;  var value = 1&amp;#125;// 可以变形成var valueif (a === true) &amp;#123;  value = 1&amp;#125; 只要不是新手，都应该明白这两个代码块是相等的。为什么呢,因为var声明存在变量提升，此">
@@ -163,6 +163,7 @@
 <h2 id="先说var"><a href="#先说var" class="headerlink" title="先说var"></a>先说<code>var</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a === <span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 可以变形成</span></span><br><span class="line"><span class="keyword">var</span> value</span><br><span class="line"><span class="keyword">if</span> (a === <span class="literal">true</span>) &#123;</span><br><span class="line">  value = <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>只要不是新手，都应该明白这两个代码块是相等的。为什么呢,因为<code>var</code>声明存在变量提升，此时如果<code>a !== true</code>成立时,则<code>value</code>应该等于<code>undefined</code>,同理，<code>var</code>声明的<code>function</code>也是存在变量提升行为的。下面是一个 for 循环</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>我们知道,即使循环结束了我们仍然可以访问到<code>i</code>,此时控制台打印的是 10，为了解决这个问题，ES6 引入了块级作用域。</p>
 <h2 id="let-amp-const"><a href="#let-amp-const" class="headerlink" title="let &amp; const"></a>let &amp; const</h2><h3 id="1-无变量提升行为"><a href="#1-无变量提升行为" class="headerlink" title="1.无变量提升行为"></a>1.无变量提升行为</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">false</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> value = <span class="number">1</span></span><br><span class="line">  <span class="keyword">const</span> value2 = <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(value) <span class="comment">// Uncaught ReferenceError: value is not defined</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-重复声明报错"><a href="#2-重复声明报错" class="headerlink" title="2.重复声明报错"></a>2.重复声明报错</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> value = <span class="number">1</span> <span class="comment">// Uncaught SyntaxError: Identifier 'value' has already been declared</span></span><br><span class="line"><span class="keyword">const</span> ...</span><br></pre></td></tr></table></figure>
@@ -274,15 +275,18 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2019 芬达
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+      <div class="footer-left">
+        &copy; 2019 芬达
+      </div>
+      <div class="footer-right">
+        <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+        by Litten
+      </div>
     </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -350,15 +354,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -378,15 +382,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">掘金</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">懒加载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">掘金</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -399,10 +403,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaScript2</a>
               </li>
             
             <div class="clearfix"></div>

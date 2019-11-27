@@ -319,12 +319,9 @@
         <h1 id="hotkey-js-的使用"><a href="#hotkey-js-的使用" class="headerlink" title="hotkey.js 的使用"></a>hotkey.js 的使用</h1><p>在一个小项目中遇到了快捷键的小需求，所以选择了 <code>hotkey.js</code>。目前该项目的 star 数 3277。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hotkeys-js --save</span><br></pre></td></tr></table></figure>
 <p><strong>注意</strong>我们是要在线上仍然使用这个 js 库，所以并不是安装到开发依赖中。</p>
-<hr>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hotkeys <span class="keyword">from</span> <span class="string">"hotkeys-js"</span></span><br><span class="line"></span><br><span class="line">hotkeys(<span class="string">"f5"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event, handler</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Prevent the default refresh event under WINDOWS system</span></span><br><span class="line">  event.preventDefault()</span><br><span class="line">  alert(<span class="string">"you pressed F5!"</span>)</span><br><span class="line">&#125;)</span><br><span class="line">hotkeys(<span class="string">"ctrl+a,ctrl+b,r,f"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event, handler</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (handler.key) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"ctrl+a"</span>:</span><br><span class="line">      alert(<span class="string">"you pressed ctrl+a!"</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">"ctrl+b"</span>:</span><br><span class="line">      alert(<span class="string">"you pressed ctrl+b!"</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">"r"</span>:</span><br><span class="line">      alert(<span class="string">"you pressed r!"</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">"f"</span>:</span><br><span class="line">      alert(<span class="string">"you pressed f!"</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>我的需求是多组跨快捷键的定义，所以写法我采用的是第二种。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p><code>hotkey</code>默认不监听 <code>input</code> <code>select</code> <code>textarea</code>，即元素获取焦点时不触发定义的快捷键。<br>要想达到监听的需求，需要写一句这样的代码<br><code>hotkeys.filter = () =&gt; true</code>，将所有情况全部返回 true</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>用这个库我成功的为自己的 markdown 在线编辑器添加了快捷键功能。<a href="https://ch957869975.github.io/md-editor/dist/">编辑器地址</a></p>
-
+        
+          <a class="article-more-a" href="/2019/02/18/hotkey/#more">more >></a>
+        
       
 
       
@@ -402,39 +399,10 @@
 <hr>
 <h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><p><code>vue</code> <code>less</code> <code>iview</code> <code>markdown-it</code> <code>iconfont</code></p>
 <hr>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p><code>markdown-it-mark</code> 标记功能<br> <code>markdown-it-emoji</code> emoji 表情解析<br><code>highligh.js</code>代码高亮<br><code>markdown-it-task-checkbox</code> 复选框功能<br><code>markdown-it-footnote</code> 脚注功能</p>
-<hr>
-<h2 id="插件效果"><a href="#插件效果" class="headerlink" title="插件效果"></a>插件效果</h2><p>==高亮标记==<br>:smiling_imp:</p>
-<ul>
-<li style="list-style: none"><input type="checkbox"> text</li>
-<li style="list-style: none"><input type="checkbox" checked> text  <pre><code>^[脚注 1] ^[脚注 2]
-</code></pre></li>
-</ul>
-<p>掘金没有支持<code>标记</code>与<code>emoji</code>，贴一下图。<br><img src="https://ws1.sinaimg.cn/mw690/0072Lfvtly1g08743vn20j302a03i0sl.jpg" alt=""></p>
-<hr>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>在编辑器输入组件中 <code>watch</code>输入内容的变化，有变化就实时调用<code>markdown-it</code>的<code>render</code>函数，并在<code>localStorage</code>中实时更新一份，防止页面误操作被跳出再返回时辛辛苦苦写的内容没了。同时也可以达到这次没写完页面关闭了，下次打开继续写的需求。 <strong>导出文件后草稿会被清空。</strong><br><strong>因为不调用接口存储数据，未做函数防抖处理，如需引入请自行添加。</strong><br>微博图床的地址是从一个工具页面上扒下来的，感觉写那个工具的兄弟也是从其他的地方扒的呢哈哈（开玩笑的），贴出工具地址：<a href="http://tool.mkblog.cn/tuchuang/" target="_blank" rel="noopener">图床工具</a></p>
-<hr>
-<h2 id="下载打包"><a href="#下载打包" class="headerlink" title="下载打包"></a>下载打包</h2><p><code>git clone git@github.com:ch957869975/md-editor.git</code><br> <code>npm run dev</code> 或 <code>npm run build</code><br>打开 8080 端口即可看到预览<br><img src="https://ws1.sinaimg.cn/mw690/0072Lfvtly1g081m8s9w9j32cm1l2qbc.jpg" alt=""></p>
-<hr>
-<h2 id="有意思的点"><a href="#有意思的点" class="headerlink" title="有意思的点"></a>有意思的点</h2><p>做的时候遇到几个点比较有意思，提一下。</p>
-<h3 id="在光标位置插入字符"><a href="#在光标位置插入字符" class="headerlink" title="在光标位置插入字符"></a>在光标位置插入字符</h3><p>ie 支持<code>document.selection</code>，而绝大多数浏览器支持<code>selectionStart</code> 与 <code>selectionEnd</code> 两个属性。利用这两个属性加上字符串的<code>substring</code>方法动态拼接起来。 <strong>这里需要注意的是 用这个方法拼接起来的字符串，并没有触发对变量的双向绑定，所以我在这里手动触发了一下<code>textarea</code>的 input 事件，如下：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"textarea"</span>).dispatchEvent(<span class="keyword">new</span> Event(<span class="string">"input"</span>))</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="文件在前端生成并下载"><a href="#文件在前端生成并下载" class="headerlink" title="文件在前端生成并下载"></a>文件在前端生成并下载</h3><p>下载在前端开发中并不稀奇，但文件写入可能不常遇到，要不是写这个玩意，我也没做工文件生成。<br><strong>代码如下：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!<span class="keyword">this</span>.editorContent || !<span class="built_in">window</span>.localStorage.getItem(<span class="string">"MarkdownDraft"</span>)) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.$Notice.error(&#123; <span class="attr">title</span>: <span class="string">"你还没有写内容"</span> &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> content = <span class="keyword">this</span>.editorContent</span><br><span class="line"><span class="keyword">const</span> elem = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>)</span><br><span class="line">elem.download = <span class="string">"draft.md"</span></span><br><span class="line">elem.style.display = <span class="string">"none"</span></span><br><span class="line"><span class="keyword">const</span> blob = <span class="keyword">new</span> Blob([content], &#123; <span class="attr">type</span>: <span class="string">"text/plain"</span> &#125;)</span><br><span class="line">elem.href = URL.createObjectURL(blob)</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(elem)</span><br><span class="line">elem.click()</span><br><span class="line"><span class="built_in">document</span>.body.removeChild(elem)</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">this</span>.editorContent = <span class="string">""</span></span><br><span class="line">  <span class="built_in">window</span>.localStorage.removeItem(<span class="string">"MarkdownDraft"</span>)</span><br><span class="line">&#125;, <span class="number">300</span>)</span><br></pre></td></tr></table></figure>
-<p>思路还是比较清晰的：有值的时候才生成， <strong>避免生成一个空文件</strong>。 利用<code>Blob</code>对象生成对应内容后，再创建一个 <strong>不可见的<code>a</code>标签并将 <code>href</code>和<code>download</code>属性添加进去，手动触发点击事件后并移除该标签。</strong><br><strong>但是需要考虑兼容性呀。</strong><br>这里是<code>a.download</code>的支持情况，ie 不支持！！！。<br><img src="https://ws1.sinaimg.cn/mw690/0072Lfvtly1g0865h55q4j30z20ay40d.jpg" alt=""></p>
-<p>木得办法，做个判断吧。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (!(&apos;download&apos; in document.createElement(&apos;a&apos;))) return this.$Notice.error(&#123; title: &apos;浏览器不支持&apos; &#125;)</span><br></pre></td></tr></table></figure>
-<p>可能你说 ie 怎么办？<br>回答：都 9102 年了，你还在用 ie，不抛弃你抛弃谁？？</p>
-<hr>
-<h3 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h3><p>组件之间通信，因为偷懒，用了<code>bus.js</code>，实际代码就两行</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vue()</span><br></pre></td></tr></table></figure>
-<p>原理是 <strong>挂载在同一实例上的组件都可以触发实例上的事件</strong>，理论上是可以实现任意组件之间的通信，无视组件层级关系。但是， <strong>并不推荐这种做法，因为这会让你的逻辑太跳跃，具体表现就是你的代码东一榔头西一棒子，A 组件在 bus 上绑定的事件经常找不到在哪里触发的，B 组件触发的事件找不到是在哪里绑定的，维护起来较为困难。</strong></p>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>功能简单、技术简单、ui 简单、部署简单。一个简单的小项目，就看你愿不愿意去做了。</p>
-<p>这里贴出<a href="https://ch957869975.github.io/md-editor/dist/">编辑器地址</a>与<a href="https://github.com/ch957869975/md-editor" target="_blank" rel="noopener">源码地址</a>。<strong>厚着脸皮求个 star</strong>。<br><a href="https://ch957869975.github.io/hexo-blog/">博客地址</a></p>
-<p>不是所有的事情都能如愿以偿，但是任何事情都值得去尝试。加油！<br>ps: 下面两个脚注对应插件效果演示，不必关心。</p>
-
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p><code>markdown-it-mark</code> 标记功能<br> <code>markdown-it-emoji</code> emoji 表情解析<br><code>highligh.js</code>代码高亮</p>
+        
+          <a class="article-more-a" href="/2019/02/16/editor/#more">more >></a>
+        
       
 
       
@@ -516,25 +484,9 @@
 <h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>先看下效果吧，想一想怎么构图先。<br><img src="https://user-gold-cdn.xitu.io/2019/2/8/168caeba3f9f72ad?w=494&amp;h=424&amp;f=jpeg&amp;s=18726" alt=""></p>
 <p>上图是已经完成的效果。钻石整体都是由三角形构成，上五下三。上边是五个等边三角形，其中有 2 个是倒扣过来填补三个之间的空缺。下边是一个等腰三角形和 2 个对称的钝角三角形，差不多就是这样。（钝角三角形不是太好理解，至少我没成功，这里的钝角三角形是用等腰三角形通过<code>transform: skew()</code>实现的）</p>
 <h1 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h1><p>这个 demo 中涉及到了 css3 的 <code>transform</code>, css 画三角形 以及 <strong>如何给 css 画出的三角形加边框</strong>，三角形的边框构成了钻石的棱角（白色的线条），预处理语言使用的是<code>less</code>。</p>
-<p><strong>三角形的边框</strong>：我们知道，三角形本来就是用<code>border</code>画的，给三角形加边框相当于给<code>border</code>加<code>border</code>,这个做法肯定行不通。我是这样做的：画 2 个三角形，一个大的一个小的，小的比大的小<code>1px</code>,然后小的盖在大的上面，这样大三角形就只漏出<code>1px</code>,视觉效果就是成为了内部小三角形的边框线了。<a href="https://www.cnblogs.com/blosaa/p/3823695.html" target="_blank" rel="noopener">参考博文</a></p>
-<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="dom-准备"><a href="#dom-准备" class="headerlink" title="dom 准备"></a>dom 准备</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"diamond"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"t"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common top"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common top"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common top"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common top"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common top"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"b"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common bottom bottom1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common bottom bottom2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common bottom bottom3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>三角形的个数是上五下三。<del>请忽略命名，please</del></p>
-<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><h3 id="钻石上部分"><a href="#钻石上部分" class="headerlink" title="钻石上部分"></a>钻石上部分</h3><p>先把<code>common</code>的样式定义出来</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#diamond</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="selector-class">.t</span> &#123;</span><br><span class="line">    <span class="comment">//直接定义了高度免去了清除浮动</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.common</span> &#123;</span><br><span class="line">    <span class="comment">// 公共样式</span></span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border-style</span>: solid; <span class="comment">// 元素本身做大三角形，衬底成为小三角形的边框</span></span><br><span class="line">    <span class="selector-tag">&amp;</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">      <span class="comment">// 伪元素定义小三角形</span></span><br><span class="line">      <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">border-style</span>: solid;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">div</span><span class="selector-class">.top</span> &#123;</span><br><span class="line">    <span class="comment">// 钻石顶部的5个三角形特定样式</span></span><br><span class="line">    <span class="attribute">border-width</span>: <span class="number">0</span> <span class="number">30px</span> <span class="number">30px</span>; <span class="comment">// 三角形大小</span></span><br><span class="line">    <span class="attribute">border-color</span>: transparent transparent <span class="number">#fff</span>; <span class="comment">// 三角形颜色</span></span><br><span class="line">    <span class="selector-tag">&amp;</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">      <span class="comment">// 小三角形</span></span><br><span class="line">      <span class="attribute">top</span>: <span class="number">1px</span>; <span class="comment">// 移动三角形使之盖在底部的大的三角形</span></span><br><span class="line">      <span class="attribute">left</span>: -<span class="number">28px</span>;</span><br><span class="line">      <span class="attribute">border-width</span>: <span class="number">0</span> <span class="number">28px</span> <span class="number">28px</span>; <span class="comment">// 小三角形的大小定义</span></span><br><span class="line">      <span class="attribute">border-color</span>: transparent transparent red;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">&amp;</span><span class="selector-pseudo">:nth-child(2n)</span> &#123;</span><br><span class="line">      <span class="comment">// 第二个第四个三角形倒立。</span></span><br><span class="line">      <span class="attribute">transform</span>: rotate(<span class="number">180deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">&amp;</span><span class="selector-pseudo">:nth-child(n</span> + <span class="selector-tag">2</span>) &#123;</span><br><span class="line">      <span class="comment">// 从第二个开始都向左移动30px</span></span><br><span class="line">      <span class="attribute">margin-left</span>: -<span class="number">30px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在样式中都做了注释，不再赘述 ， <del>我会说我赶时间去相亲？</del> 到这呢效果只有钻石上面的部分。如下图：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/8/168cb15a3d59a634?w=494&amp;h=148&amp;f=jpeg&amp;s=5877" alt=""></p>
-<h3 id="钻石下部分"><a href="#钻石下部分" class="headerlink" title="钻石下部分"></a>钻石下部分</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 上部分的样式省略了</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.bottom</span> &#123;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">90px</span> <span class="number">30px</span> <span class="number">0</span> <span class="number">30px</span>; <span class="comment">// 高度适当的高点，这里给了90px</span></span><br><span class="line">  <span class="attribute">border-color</span>: <span class="number">#fff</span> transparent transparent; <span class="comment">// 三角形向下，底色白色</span></span><br><span class="line">  <span class="selector-tag">&amp;</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="comment">// 同上，做出内部红色的小三角形，尺寸稍小，漏出白色的“边框线”</span></span><br><span class="line">    <span class="attribute">border-width</span>: <span class="number">88px</span> <span class="number">28px</span> <span class="number">0</span> <span class="number">28px</span>;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="number">#f00</span> transparent transparent;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">89px</span>;</span><br><span class="line">    <span class="attribute">left</span>: -<span class="number">28px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *   到这应该是三个等腰三角形</span></span><br><span class="line"><span class="comment">     *   第一个第三个三角形应该要是钝角三角形的。</span></span><br><span class="line"><span class="comment">     *   所以要进行一下倾斜操作</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">&amp;</span><span class="selector-class">.bottom1</span> &#123;</span><br><span class="line">    <span class="comment">// 底部第一个三角形倾斜转换</span></span><br><span class="line">    <span class="attribute">transform</span>: skew(<span class="number">33.5deg</span>);</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">100%</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">&amp;</span><span class="selector-class">.bottom3</span> &#123;</span><br><span class="line">    <span class="comment">// 底部第三个三角形倾斜转换，与第一个对称</span></span><br><span class="line">    <span class="attribute">transform</span>: skew(-<span class="number">33.5deg</span>);</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">100%</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 数学不好，这个角度是我试了几次试出来的，数学好的可以算下呢，啊哈哈哈</span></span><br></pre></td></tr></table></figure>
-<p>注释里都写了。<del>不赘述不赘述，别问为什么。</del></p>
-<p>差不多就是这样了，上一下效果。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/8/168caeba3f9f72ad?w=494&amp;h=424&amp;f=jpeg&amp;s=18726" alt=""></p>
-<p><del>我会说这就是一开始的效果图？</del> 总觉得差点什么，duangduang 加一下特效</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/2/8/168cb2d704d2f3b4?w=688&amp;h=562&amp;f=jpeg&amp;s=30703" alt=""></p>
-<p>buling buling 的效果，啊哈哈哈哈哈哈。</p>
-<h2 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h2><p>张鑫旭大神博客中有 不包含钻石棱角的实现，在第 26 个图形中。 <a href="https://www.zhangxinxu.com/wordpress/2019/01/pure-css-shapes/" target="_blank" rel="noopener">地址在此</a></p>
-<p>祝新年快乐，万事顺意。愿往后的生活没有相亲和 IE 浏览器。</p>
-<p>效果已出，感谢阅读。<br><a href="https://codepen.io/ch957869975/pen/VgrNyW" target="_blank" rel="noopener">源码在此</a> 或访问 <a href="https://ch957869975.github.io/hexo-blog/">我的博客</a></p>
-<p>送个福利，<a href="http://apps.eky.hk/css-triangle-generator/zh-hant" target="_blank" rel="noopener">css 三角形产生器</a> 。</p>
-
+        
+          <a class="article-more-a" href="/2019/02/08/diamond/#more">more >></a>
+        
       
 
       
@@ -604,15 +556,18 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2019 芬达
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+      <div class="footer-left">
+        &copy; 2019 芬达
+      </div>
+      <div class="footer-right">
+        <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+        by Litten
+      </div>
     </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -680,15 +635,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -708,15 +663,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">掘金</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">懒加载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">掘金</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -729,10 +684,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaScript2</a>
               </li>
             
             <div class="clearfix"></div>

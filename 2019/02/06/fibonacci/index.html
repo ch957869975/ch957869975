@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="记事本">
 <meta property="og:description" content="ps：斐波那契数列数列，[1,2,3,5,8,13,21…],从第三项开始，当前项是前两项的和的一组数 今天在微信群看到了这个面试题，求 第 100 个的斐波那契数 常规常见的写法是这样的 123456function fibonacci1(n) &amp;#123;  if (n === 1 || n === 2) return n  return fibonacci1(n - 1) + fibonac">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-27T02:57:39.674Z">
+<meta property="og:updated_time" content="2019-11-27T03:07:08.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="斐波那契数列">
 <meta name="twitter:description" content="ps：斐波那契数列数列，[1,2,3,5,8,13,21…],从第三项开始，当前项是前两项的和的一组数 今天在微信群看到了这个面试题，求 第 100 个的斐波那契数 常规常见的写法是这样的 123456function fibonacci1(n) &amp;#123;  if (n === 1 || n === 2) return n  return fibonacci1(n - 1) + fibonac">
@@ -163,6 +163,7 @@
 <p>今天在微信群看到了这个面试题，求 第 100 个的斐波那契数</p>
 <h2 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h2><p>常见的写法是这样的</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci1</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span> || n === <span class="number">2</span>) <span class="keyword">return</span> n</span><br><span class="line">  <span class="keyword">return</span> fibonacci1(n - <span class="number">1</span>) + fibonacci1(n - <span class="number">2</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// fibonacci1(50) = 20365011074</span></span><br><span class="line"><span class="comment">// time = 140550.01586914062ms</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>ok，代码没问题，打印一下吧，<code>console.log(fibonacci(100))</code>,发现打印不出来，计算太庞大了，简单 3 行的递归 function，竟然导致了浏览器崩溃，难以置信，但事实如此。</p>
 <p>也别第 100 个了，就第 50 个，计算需要 140 多秒，别问我怎么知道的，<code>console.time</code> 和<code>console.timeEnd</code>了解一下。</p>
 <h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>考虑一下怎么优化，用时长应该是需要递归调用所以才比较耗费时间，但我们好像只需要<code>fibonacci(n - 1)</code>与<code>fibonacci(n - 2)</code>两个值，把它作为变量存储起来，可以大大减少内存开销。</p>
@@ -283,15 +284,18 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2019 芬达
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+      <div class="footer-left">
+        &copy; 2019 芬达
+      </div>
+      <div class="footer-right">
+        <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+        by Litten
+      </div>
     </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -359,15 +363,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -387,15 +391,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">掘金</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">懒加载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">掘金</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -408,10 +412,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaScript2</a>
               </li>
             
             <div class="clearfix"></div>

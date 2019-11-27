@@ -161,40 +161,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>为了梳理知识点，写一下 8102 年的箭头函数<br>(ps:我写分号了，不过被我配置的 ide 的格式规则给抹平了)</p>
-<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fun = <span class="function"><span class="params">value</span> =&gt;</span> value</span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"><span class="keyword">const</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> value</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 多个参数并需要返回对象的情况下可以这样</span></span><br><span class="line"><span class="comment">// 两个参数的默认值为0，es6设置默认值的方法，解构赋值时也可以设置默认值</span></span><br><span class="line"><span class="keyword">const</span> fun = <span class="function">(<span class="params">a = <span class="number">0</span>, b = <span class="number">0</span></span>) =&gt;</span> (&#123; <span class="attr">total</span>: a + b &#125;)</span><br><span class="line"><span class="comment">// 参数解构并设置默认值的写法</span></span><br><span class="line"><span class="keyword">const</span> fun = <span class="function">(<span class="params">&#123; a = <span class="number">0</span>, b = <span class="number">0</span> &#125;</span>) =&gt;</span> (&#123; <span class="attr">total</span>: a + b &#125;)</span><br><span class="line"><span class="comment">// 可以这样调用</span></span><br><span class="line"><span class="keyword">const</span> ret = fun(&#123; <span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span> &#125;)</span><br><span class="line"><span class="comment">//或使用默认值</span></span><br><span class="line"><span class="keyword">const</span> ret = fun()</span><br></pre></td></tr></table></figure>
-<h2 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h2><h3 id="1-不能被-new"><a href="#1-不能被-new" class="headerlink" title="1.不能被 new"></a>1.不能被 new</h3><p>就是不能通过 new 关键字被调用, js 函数的内部属性中包含了[[Construct]],当 new 实例发生时，调用该方法。<br>通俗点讲就是 new 操作符执行了一个内部的 function 从而创建了一个空对象，这个对象原型指向构造函数的 prototype，执行构造函数后返回这个对象（return this）。<br>but，箭头函数没有这个构造器，所以 new 时会抛出一个错误</p>
-<h3 id="2-没有原型"><a href="#2-没有原型" class="headerlink" title="2.没有原型"></a>2.没有原型</h3><p>不能被 new，就没有构造原型的必要，不难理解，才导致了没有 prototype 的</p>
-<h3 id="3-不能被-super"><a href="#3-不能被-super" class="headerlink" title="3.不能被 super"></a>3.不能被 super</h3><p>既然原型都没得，肯定也不能用 super 访问原型属性。but，要值得说下的是，super 和 this 类似，取的是最近一层非箭头函数的值</p>
-<h3 id="4-没有-arguments"><a href="#4-没有-arguments" class="headerlink" title="4.没有 arguments"></a>4.没有 arguments</h3><p>没有此内部属性，同 super 和 this 一样，取最近一层函数的 arguments</p>
-<h3 id="5-没有-this"><a href="#5-没有-this" class="headerlink" title="5. 没有 this"></a>5. <b>没有 this</b></h3><p>这里引用冴羽大大的例子，<a href="https://juejin.im/post/5b14d0b4f265da6e60393680" target="_blank" rel="noopener">原文在这里</a></p>
-<p>箭头函数没有 this，所以需要通过查找作用域链来确定 this 的值。</p>
-<p>这就意味着如果箭头函数被非箭头函数包含，this 绑定的就是最近一层非箭头函数的 this。</p>
-<p>模拟一个实际开发中的例子：</p>
-<p>我们的需求是点击一个按钮，改变该按钮的背景色。</p>
-<p>为了方便开发，我们抽离一个 Button 组件，当需要使用的时候，直接：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传入元素 id 值即可绑定该元素点击时改变背景色的事件</span></span><br><span class="line"><span class="keyword">new</span> Button(<span class="string">"button"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button"</span>&gt;</span>点击变色<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>js 是下面这样的</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Button</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.element = <span class="built_in">document</span>.querySelector(<span class="string">"#"</span> + id)</span><br><span class="line">  <span class="keyword">this</span>.bindEvent()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Button.prototype.bindEvent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.element.addEventListener(<span class="string">"click"</span>, <span class="keyword">this</span>.setBgColor, <span class="literal">false</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Button.prototype.setBgColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.element.style.backgroundColor = <span class="string">"#1abc9c"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> button = <span class="keyword">new</span> Button(<span class="string">"button"</span>)</span><br></pre></td></tr></table></figure>
-<p>看着好像没有问题，结果却是报错 <font color="red">Uncaught TypeError: Cannot read property ‘style’ of undefined</font></p>
-<p>这是因为当使用 addEventListener() 为一个元素注册事件的时候，事件函数里的 this 值是该元素的引用。</p>
-<p>所以如果我们在 setBgColor 中 console.log(this)，this 指向的是按钮元素，那 this.element 就是 undefined，报错自然就理所当然了。</p>
-<p>也许你会问，既然 this 都指向了按钮元素，那我们直接修改 setBgColor 函数为：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Button.prototype.setBgColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.style.backgroundColor = <span class="string">"#1abc9c"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>不就可以解决这个问题了？</p>
-<p>确实可以这样做，但是在实际的开发中，我们可能会在 setBgColor 中还调用其他的函数，比如写成这种：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Button.prototype.setBgColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.setElementColor()</span><br><span class="line">  <span class="keyword">this</span>.setOtherElementColor()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>所以我们还是希望 setBgColor 中的 this 是指向实例对象的，这样就可以调用其他的函数。</p>
-<p>利用 ES5，我们一般会这样做：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Button.prototype.bindEvent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.element.addEventListener(<span class="string">"click"</span>, <span class="keyword">this</span>.setBgColor.bind(<span class="keyword">this</span>), <span class="literal">false</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>为避免 addEventListener 的影响，使用 bind 强制绑定 setBgColor() 的 this 为实例对象</p>
-<p>使用 ES6，我们可以更好的解决这个问题：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Button.prototype.bindEvent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.element.addEventListener(<span class="string">"click"</span>, event =&gt; <span class="keyword">this</span>.setBgColor(event), <span class="literal">false</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>由于箭头函数没有 this，所以会向外层查找 this 的值，即 bindEvent 中的 this，此时 this 指向实例对象，所以可以正确的调用 this.setBgColor 方法， 而 this.setBgColor 中的 this 也会正确指向实例对象。</p>
-<p>在这里再额外提一点，就是注意 bindEvent 和 setBgColor 在这里使用的是普通函数的形式，而非箭头函数，如果我们改成箭头函数，会导致函数里的 this 指向 window 对象 (非严格模式下)。</p>
-<p>最后，因为箭头函数没有 this，所以也不能用 call()、apply()、bind() 这些方法改变 this 的指向，可以看一个例子：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> result = <span class="function">(<span class="params">(</span>) =&gt;</span> <span class="keyword">this</span>.value).bind(&#123; <span class="attr">value</span>: <span class="number">2</span> &#125;)()</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2019/02/06/arrow/#more">more >></a>
+        
       
 
       
@@ -428,124 +397,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>所谓磨刀不误砍柴工，作为一个前端菜鸟更应该把刀磨快一点。<br>总结了一下我自己常用的 vscode 的插件以及 setting.json 如何配置，可以更好的提高开发效率。</p>
-<h2 id="插件集合"><a href="#插件集合" class="headerlink" title="插件集合"></a>插件集合</h2><table>
-<thead>
-<tr>
-<th>插件名</th>
-<th>插件功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Auto Close Tag</td>
-<td>自动关闭 html/xml 标签</td>
-</tr>
-<tr>
-<td>Auto Rename Tag</td>
-<td>自动匹配关闭标签</td>
-</tr>
-<tr>
-<td>Can I Use</td>
-<td>html5,css3,svg 的浏览器兼容查询</td>
-</tr>
-<tr>
-<td>HTML CSS Class Completion CSS</td>
-<td>class 提示</td>
-</tr>
-<tr>
-<td>HTML CSS Support</td>
-<td>css 提示（支持 vue）</td>
-</tr>
-<tr>
-<td>background</td>
-<td>主题背景图（windows）</td>
-</tr>
-<tr>
-<td>Bracket Pair Colorizer</td>
-<td>彩虹括号，轻松找到对应括号的另外一半</td>
-</tr>
-<tr>
-<td>colorize</td>
-<td>颜色显示，主要用于 css 写入颜色类样式时直接显示该颜色</td>
-</tr>
-<tr>
-<td>Document This</td>
-<td>智能添加注释</td>
-</tr>
-<tr>
-<td>ES7 React/Redux/GraphQL/React-Native snippets</td>
-<td>react/redux/react native 代码片段</td>
-</tr>
-<tr>
-<td>ESlint</td>
-<td>代码风格检查，智能提醒报错，培养一个良好的代码风格才是重要的事</td>
-</tr>
-<tr>
-<td>Git Blame</td>
-<td>检测每一行代码的提交记录</td>
-</tr>
-<tr>
-<td>indent-rainbow</td>
-<td>彩虹缩进</td>
-</tr>
-<tr>
-<td>Indenticator</td>
-<td>选中一行智能匹配代码块并连线</td>
-</tr>
-<tr>
-<td>JavaScript (ES6) code snippets</td>
-<td>es6 代码片段</td>
-</tr>
-<tr>
-<td>Lodash Snippets</td>
-<td>lodash 代码片段</td>
-</tr>
-<tr>
-<td>miniapp</td>
-<td>微信小程序标签/属性的智能补全，支持原生小程序/mpvue/wepy，包含代码片段</td>
-</tr>
-<tr>
-<td>Output Colorizer</td>
-<td>输出面板彩虹提示</td>
-</tr>
-<tr>
-<td>Prettier - Code formatter</td>
-<td>代码格式化，需要配合 setting.json 使用</td>
-</tr>
-<tr>
-<td>Quokka.js</td>
-<td>自动计算结果并显示，省去 console.log()的调试</td>
-</tr>
-<tr>
-<td>TODO Highlight</td>
-<td>TODO FIXME 高亮</td>
-</tr>
-<tr>
-<td>Vetur</td>
-<td>vue 官方插件</td>
-</tr>
-<tr>
-<td>VueHelper</td>
-<td>vue2 代码段，包含 vue2api，vur-router2，vuex2</td>
-</tr>
-<tr>
-<td>vscode-fileheader</td>
-<td>一键生成文件头，并自动保存修改时间,配合 setting.json 使用</td>
-</tr>
-<tr>
-<td>vscode icons</td>
-<td>文件图标，方便定位文件</td>
-</tr>
-<tr>
-<td>Setting Sync</td>
-<td>vscode 配置同步到 gist，意味着不用再换电脑就要重写一次配置了</td>
-</tr>
-</tbody>
-</table>
-<h2 id="IDE-的配置-setting-json"><a href="#IDE-的配置-setting-json" class="headerlink" title="IDE 的配置 setting.json"></a>IDE 的配置 setting.json</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "fileheader.Author": "chenghao", //vscode-fileheader 使用</span><br><span class="line">  "fileheader.LastModifiedBy": "chenghao", //vscode-fileheader 使用</span><br><span class="line">  "editor.fontSize": 14, // 编辑器字号</span><br><span class="line">  "editor.tabSize": 2, // 1个制表符的缩进大小</span><br><span class="line">  "editor.lineHeight": 17, // 通过使用鼠标滚轮同时按住 Ctrl 可缩放编辑器的字体</span><br><span class="line">  "editor.mouseWheelZoom": true, // 行太长自动换行</span><br><span class="line">  "editor.wordWrap": "on",</span><br><span class="line">  "explorer.confirmDelete": false, // 控制文件资源管理器删除文件到废纸篓是否进行确认</span><br><span class="line">  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe", // 终端，mac可省略</span><br><span class="line">  "breadcrumbs.enabled": true, //启用面包屑导航</span><br><span class="line">  "workbench.editor.enablePreview": false, //打开文件不覆盖</span><br><span class="line">  "editor.formatOnSave": true, //保存时是否进行格式化</span><br><span class="line">  "search.exclude": &#123;</span><br><span class="line">    // 搜索黑名单</span><br><span class="line">    "**/node_modules": true,</span><br><span class="line">    "**/bower_components": true,</span><br><span class="line">    "**/dist": true,</span><br><span class="line">    "**/build": true,</span><br><span class="line">    "**/.git": true,</span><br><span class="line">    "**/.gitignore": true,</span><br><span class="line">    "**/.svn": true,</span><br><span class="line">    "**/.DS_Store": true,</span><br><span class="line">    "**/.idea": true,</span><br><span class="line">    "**/.vscode": false,</span><br><span class="line">    "**/yarn.lock": true</span><br><span class="line">  &#125;,</span><br><span class="line">  "files.associations": &#123;</span><br><span class="line">    // 配置文件关联，以便启用对应的智能提示，比如wxss使用css</span><br><span class="line">    "*.vue": "vue",</span><br><span class="line">    "*.wxss": "css"</span><br><span class="line">  &#125;,</span><br><span class="line">  "background.enabled": true, // background插件是否可用，以下是对background插件的配置</span><br><span class="line">  "background.useDefault": false,</span><br><span class="line">  "background.customImages": ["file:///F:/background/3.jpg"],</span><br><span class="line">  "background.useFront": false,</span><br><span class="line">  "background.style": &#123;</span><br><span class="line">    "content": "''",</span><br><span class="line">    "pointer-events": "none",</span><br><span class="line">    "position": "absolute",</span><br><span class="line">    "top": "0",</span><br><span class="line">    "right": "0",</span><br><span class="line">    "width": "100%",</span><br><span class="line">    "height": "100%",</span><br><span class="line">    "z-index": "99999",</span><br><span class="line">    "background.repeat": "no-repeat",</span><br><span class="line">    "background-size": "contain",</span><br><span class="line">    "opacity": 0.1</span><br><span class="line">  &#125;,</span><br><span class="line">  "prettier.semi": false, //是否使用分号</span><br><span class="line">  "prettier.tabWidth": 2,</span><br><span class="line">  "prettier.singleQuote": true, // 是否使用单引号，true则在js中不能使用双引号</span><br><span class="line">  "prettier.printWidth": 120, //每行代码在该数字范围内，分辨率大可以把它写大些</span><br><span class="line">  "eslint.validate": [</span><br><span class="line">    // eslint 验证文件类型</span><br><span class="line">    "javascript",</span><br><span class="line">    "javascriptreact",</span><br><span class="line">    &#123; "language": "vue", "autoFix": true &#125;,</span><br><span class="line">    &#123; <span class="attr">"language"</span>: <span class="string">"html"</span>, <span class="attr">"autoFix"</span>: <span class="literal">true</span> &#125;</span><br><span class="line">  ],</span><br><span class="line">  "eslint.autoFixOnSave": true, // ctrl+s 保存时自动修正格式错误的js代码</span><br><span class="line">  "vetur.format.defaultFormatter.js": "vscode-typescript", //格式化的风格覆盖vscode的默认配置</span><br><span class="line">  "javascript.format.insertSpaceBeforeFunctionParenthesis": true, // 函数定义与后面括号之间增加一个空格</span><br><span class="line">  "vetur.format.defaultFormatter.html": "js-beautify-html", //格式化.vue中html</span><br><span class="line">  "vetur.format.defaultFormatterOptions": &#123;</span><br><span class="line">    "js-beautify-html": &#123;</span><br><span class="line">      "wrap_attributes": "force" //属性强制折行对齐</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>真正做到拿来既用，希望对你有帮助 💕</p>
-<p>晚安 🌙</p>
-
+        
+          <a class="article-more-a" href="/2019/02/06/vscode/#more">more >></a>
+        
       
 
       
@@ -689,15 +543,18 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2019 芬达
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+      <div class="footer-left">
+        &copy; 2019 芬达
+      </div>
+      <div class="footer-right">
+        <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+        by Litten
+      </div>
     </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -765,15 +622,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -793,15 +650,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">掘金</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">懒加载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">掘金</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -814,10 +671,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaScript2</a>
               </li>
             
             <div class="clearfix"></div>

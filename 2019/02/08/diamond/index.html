@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/8/168cb15a3d59a634?w=494&h=148&f=jpeg&s=5877">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/8/168caeba3f9f72ad?w=494&h=424&f=jpeg&s=18726">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/8/168cb2d704d2f3b4?w=688&h=562&f=jpeg&s=30703">
-<meta property="og:updated_time" content="2019-11-27T02:57:26.593Z">
+<meta property="og:updated_time" content="2019-11-27T03:05:26.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何使用css绘制钻石">
 <meta name="twitter:description" content="听说你想要钻石 💎？买不起，还是用 css 来画一个吧，但你敢送给自己女朋友，不保证不被打。 下午两点要相亲，要不把这个送相亲对象？ 效果先看下效果吧，想一想怎么构图先。 上图是已经完成的效果。钻石整体都是由三角形构成，上五下三。上边是五个等边三角形，其中有 2 个是倒扣过来填补三个之间的空缺。下边是一个等腰三角形和 2 个对称的钝角三角形，差不多就是这样。（钝角三角形不是太好理解，至少我没成功">
@@ -169,6 +169,7 @@
 <h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>先看下效果吧，想一想怎么构图先。<br><img src="https://user-gold-cdn.xitu.io/2019/2/8/168caeba3f9f72ad?w=494&amp;h=424&amp;f=jpeg&amp;s=18726" alt=""></p>
 <p>上图是已经完成的效果。钻石整体都是由三角形构成，上五下三。上边是五个等边三角形，其中有 2 个是倒扣过来填补三个之间的空缺。下边是一个等腰三角形和 2 个对称的钝角三角形，差不多就是这样。（钝角三角形不是太好理解，至少我没成功，这里的钝角三角形是用等腰三角形通过<code>transform: skew()</code>实现的）</p>
 <h1 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h1><p>这个 demo 中涉及到了 css3 的 <code>transform</code>, css 画三角形 以及 <strong>如何给 css 画出的三角形加边框</strong>，三角形的边框构成了钻石的棱角（白色的线条），预处理语言使用的是<code>less</code>。</p>
+<a id="more"></a>
 <p><strong>三角形的边框</strong>：我们知道，三角形本来就是用<code>border</code>画的，给三角形加边框相当于给<code>border</code>加<code>border</code>,这个做法肯定行不通。我是这样做的：画 2 个三角形，一个大的一个小的，小的比大的小<code>1px</code>,然后小的盖在大的上面，这样大三角形就只漏出<code>1px</code>,视觉效果就是成为了内部小三角形的边框线了。<a href="https://www.cnblogs.com/blosaa/p/3823695.html" target="_blank" rel="noopener">参考博文</a></p>
 <h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="dom-准备"><a href="#dom-准备" class="headerlink" title="dom 准备"></a>dom 准备</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"diamond"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"t"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common top"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common top"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common top"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common top"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common top"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"b"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common bottom bottom1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common bottom bottom2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"common bottom bottom3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>三角形的个数是上五下三。<del>请忽略命名，please</del></p>
@@ -289,15 +290,18 @@
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2019 芬达
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+      <div class="footer-left">
+        &copy; 2019 芬达
+      </div>
+      <div class="footer-right">
+        <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+        <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+        by Litten
+      </div>
     </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -365,15 +369,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -393,15 +397,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">掘金</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">懒加载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">掘金</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -414,10 +418,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaScript2</a>
               </li>
             
             <div class="clearfix"></div>

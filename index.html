@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     
     <meta name="renderer" content="webkit">
-    <meta name="”referrer”" content="”no-referrer”">
+    <meta name="referrer" content="no-referrer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="dns-prefetch" href="https://ch957869975.github.io">
     <title>记事本</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="芬达的笔记本">
-<meta name="keywords" content="芬达，psycho，PSYCHO，Psycho，芬达Tz，">
+<meta name="keywords" content="芬达,note,notebook,芬达Tz">
 <meta property="og:type" content="website">
 <meta property="og:title" content="记事本">
 <meta property="og:url" content="https://ch957869975.github.io/index.html">
@@ -49,7 +49,7 @@
 		  <h1 class="header-author"><a href="/">芬达</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">芬达</p>
+		<p class="header-subtitle">一个不易相处的胖子</p>
 		
 
 		<nav class="header-menu">
@@ -99,7 +99,7 @@
 			  <h1 class="header-author js-header-author">芬达</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>芬达<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一个不易相处的胖子<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -137,6 +137,67 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-图片失效" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/06/图片失效/">关于图片被渣浪墙了之后</a>
+    </h1>
+  
+  <a href="/2019/12/06/图片失效/" class="archive-article-date">
+  	<time datetime="2019-12-06T09:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
+</a> 
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+       <p>由于之前用的是新浪图床（新浪可不承认自己做了一个图床），新浪开启了防盗链，我尝试了设置 meta 标签 <code>&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;</code> 的做法，一开始是有效的，但是现在失效了。</p>
+<p><br>我要说的是，没打算迁移到新的图床，现在用的是 码云 ，一是因为没有之前的图片备份，更重要的原因是我 <b>懒</b><br></p>
+
+<p>就酱</p>
+  
+    </div>
+    <div class="article-info article-info-index">
+       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
+        		</li>
+      		
+		</ul>
+	</div>
+ 
+ 
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2019/12/06/图片失效/">展开全文 >></a>
+      </p>
+       
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+ <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside> 
+
   
     <article id="post-async" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
@@ -397,70 +458,6 @@
 </aside> 
 
   
-    <article id="post-virtual-dom" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/06/virtual-dom/">虚拟 dom 实现（今日头条面试题）</a>
-    </h1>
-  
-  <a href="/2019/02/06/virtual-dom/" class="archive-article-date">
-  	<time datetime="2019-02-06T09:49:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-06</time>
-</a> 
-    </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-       <p>给出如下虚拟 dom 的数据结构，如何实现简单的虚拟 dom，渲染到目标 dom 节点数</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"tagName"</span>: <span class="string">"ul"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="attr">"props"</span>: &#123; <span class="attr">"class"</span>: <span class="string">"list"</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="attr">"children"</span>: [</span><br><span class="line">    &#123; <span class="attr">"tagName"</span>: <span class="string">"li"</span>, <span class="attr">"children"</span>: [<span class="string">"douyin"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"tagName"</span>: <span class="string">"li"</span>, <span class="attr">"children"</span>: [<span class="string">"toutiao"</span>] &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 
-      <a class="article-more-a" href="/2019/02/06/virtual-dom/#more">more >></a>
-        
-    </div>
-    <div class="article-info article-info-index">
-       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
- 
- 
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2019/02/06/virtual-dom/">展开全文 >></a>
-      </p>
-       
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
- <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside> 
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -561,15 +558,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,7 +645,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">一个微不足道的前端</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">害怕辜负，也时常辜负别人</div>
   	  	
     	</section>
     

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>关于图片被渣浪墙了之后</title>
+    <url>/2019/12/06/%E5%9B%BE%E7%89%87%E5%A4%B1%E6%95%88/</url>
+    <content><![CDATA[<p>由于之前用的是新浪图床（新浪可不承认自己做了一个图床），新浪开启了防盗链，我尝试了设置 meta 标签 <code>&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;</code> 的做法，一开始是有效的，但是现在失效了。</p>
+<p><br>我要说的是，没打算迁移到新的图床，现在用的是 码云 ，一是因为没有之前的图片备份，更重要的原因是我 <b>懒</b><br></p>
+
+<p>就酱</p>
+]]></content>
+      <tags>
+        <tag>心情</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我们为什么需要async/await?</title>
     <url>/2019/03/26/async/</url>
     <content><![CDATA[<p><img src="https://user-gold-cdn.xitu.io/2019/3/25/169b4d7c57ad2ba6?w=1270&amp;h=642&amp;f=png&amp;s=61453" alt=""></p>

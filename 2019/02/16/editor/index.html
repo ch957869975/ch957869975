@@ -144,24 +144,20 @@
             <article id="post-editor" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       9102年如何写一个自己的markdown在线编辑器
     </h1>
   
-
-        
-        <a href="/2019/02/16/editor/" class="archive-article-date">
+  <a href="/2019/02/16/editor/" class="archive-article-date">
   	<time datetime="2019-02-16T07:17:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-16</time>
-</a>
-        
-      </header>
+</a> 
+    </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>涵盖了大多数 markdown 语法的快捷操作，实时编译实时预览，支持直接导出 md 格式文件，支持微博图床。纯前端实现，不必担心数据被后台存储。</p>
+       <p>涵盖了大多数 markdown 语法的快捷操作，实时编译实时预览，支持直接导出 md 格式文件，支持微博图床。纯前端实现，不必担心数据被后台存储。</p>
 <h2 id="背景-amp-前言"><a href="#背景-amp-前言" class="headerlink" title="背景 &amp; 前言"></a>背景 &amp; 前言</h2><p>市面上一些 md 编辑器 有的有实时预览，比如掘金，没有操作按钮（有快捷键的哈)，用着不是太方便，而简书的操作按钮有的受限于简书钻的数量。事实上有道词典的 md 编辑器做的很好，但最近出现了我出现了卡顿、中文难以输入上去的问题，弃之。<br>所以干脆自己撸一个，可以满足自己写东西的需求。 <del>自己做的东西就算难用也得受着</del><br>由于手上没有 windows 设备，滚动条的样式还请自己修改下。</p>
 <hr>
 <h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><p><code>vue</code> <code>less</code> <code>iview</code> <code>markdown-it</code> <code>iconfont</code></p>
@@ -200,14 +196,10 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>功能简单、技术简单、ui 简单、部署简单。一个简单的小项目，就看你愿不愿意去做了。</p>
 <p>这里贴出<a href="https://ch957869975.github.io/md-editor/dist/">编辑器地址</a>与<a href="https://github.com/ch957869975/md-editor" target="_blank" rel="noopener">源码地址</a>。<strong>厚着脸皮求个 star</strong>。<br><a href="https://ch957869975.github.io/hexo-blog/">博客地址</a></p>
 <p>不是所有的事情都能如愿以偿，但是任何事情都值得去尝试。加油！<br>ps: 下面两个脚注对应插件效果演示，不必关心。</p>
-
-      
-
-      
+  
     </div>
     <div class="article-info article-info-index">
-      
-      
+       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -222,18 +214,13 @@
       		
 		</ul>
 	</div>
-
-      
-
-      
-
-      
+ 
+  
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
+ 
 <nav id="article-nav">
   
     <a href="/2019/02/18/hotkey/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -252,9 +239,7 @@
     </a>
   
 </nav>
-
-
-<aside class="wrap-side-operation">
+  <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -281,20 +266,23 @@
         </div>
         
     </div>
-</aside>
+</aside>      <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
 
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "9437e614335121f463ea",
+    clientSecret: "da6cca93c9cb5276024764856c90767392beb9aa",
+    repo: "hexo-blog",
+    owner: "ch957869975",
+    admin: ["ch957869975"],
+    id: "Sat Feb 16 2019 15:17:33 GMT+0800",
+    distractionFreeMode: "true"
+  });
+  gitalk.render("gitalk-container");
+</script>
+    
 
           </div>
         </div>
@@ -381,15 +369,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -398,6 +382,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -417,15 +405,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>

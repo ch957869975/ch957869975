@@ -140,24 +140,20 @@
             <article id="post-fibonacci" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       斐波那契数列
     </h1>
   
-
-        
-        <a href="/2019/02/06/fibonacci/" class="archive-article-date">
+  <a href="/2019/02/06/fibonacci/" class="archive-article-date">
   	<time datetime="2019-02-06T09:48:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-06</time>
-</a>
-        
-      </header>
+</a> 
+    </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>ps：斐波那契数列数列，[1,2,3,5,8,13,21…],从第三项开始，当前项是前两项的和的一组数</p>
+       <p>ps：斐波那契数列数列，[1,2,3,5,8,13,21…],从第三项开始，当前项是前两项的和的一组数</p>
 <p>今天在微信群看到了这个面试题，求 第 100 个的斐波那契数</p>
 <h2 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h2><p>常见的写法是这样的</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci1</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span> || n === <span class="number">2</span>) <span class="keyword">return</span> n</span><br><span class="line">  <span class="keyword">return</span> fibonacci1(n - <span class="number">1</span>) + fibonacci1(n - <span class="number">2</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// fibonacci1(50) = 20365011074</span></span><br><span class="line"><span class="comment">// time = 140550.01586914062ms</span></span><br></pre></td></tr></table></figure>
@@ -180,14 +176,10 @@
 <li style="list-style: none"><input type="checkbox"> 通过 generator 实现</li>
 <li style="list-style: none"><input type="checkbox"> 通过尾调用实现</li>
 </ul>
-
-      
-
-      
+  
     </div>
     <div class="article-info article-info-index">
-      
-      
+       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -202,18 +194,13 @@
       		
 		</ul>
 	</div>
-
-      
-
-      
-
-      
+ 
+  
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
+ 
 <nav id="article-nav">
   
     <a href="/2019/02/06/lazy-image/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -232,9 +219,7 @@
     </a>
   
 </nav>
-
-
-<aside class="wrap-side-operation">
+  <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -261,20 +246,23 @@
         </div>
         
     </div>
-</aside>
+</aside>      <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
 
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "9437e614335121f463ea",
+    clientSecret: "da6cca93c9cb5276024764856c90767392beb9aa",
+    repo: "hexo-blog",
+    owner: "ch957869975",
+    admin: ["ch957869975"],
+    id: "Wed Feb 06 2019 17:48:27 GMT+0800",
+    distractionFreeMode: "true"
+  });
+  gitalk.render("gitalk-container");
+</script>
+    
 
           </div>
         </div>
@@ -361,15 +349,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -378,6 +362,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -397,15 +385,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>

@@ -150,24 +150,20 @@
             <article id="post-async" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       我们为什么需要async/await?
     </h1>
   
-
-        
-        <a href="/2019/03/26/async/" class="archive-article-date">
+  <a href="/2019/03/26/async/" class="archive-article-date">
   	<time datetime="2019-03-26T01:00:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
-</a>
-        
-      </header>
+</a> 
+    </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://user-gold-cdn.xitu.io/2019/3/25/169b4d7c57ad2ba6?w=1270&amp;h=642&amp;f=png&amp;s=61453" alt=""></p>
+       <p><img src="https://user-gold-cdn.xitu.io/2019/3/25/169b4d7c57ad2ba6?w=1270&amp;h=642&amp;f=png&amp;s=61453" alt=""></p>
 <h2 id="async-是什么-amp-async-的基本用法"><a href="#async-是什么-amp-async-的基本用法" class="headerlink" title="async 是什么 &amp; async 的基本用法"></a>async 是什么 &amp; async 的基本用法</h2><blockquote>
 <p><code>async function</code> 声明用于定义一个返回 <code>AsyncFunction</code> 对象的异步函数。异步函数是指通过事件循环异步执行的函数，它会通过一个隐式的 <code>Promise</code> 返回其结果。但是如果你的代码使用了异步函数，它的语法和结构会更像是标准的同步函数。<br>引用自 MDN。</p>
 </blockquote>
@@ -225,14 +221,10 @@
 <h2 id="简单总结"><a href="#简单总结" class="headerlink" title="简单总结"></a>简单总结</h2><p><code>async/await</code>总的来说，是一个优秀的异步解决方案，利大于弊，值得一用。</p>
 <p>因为我平时用 async 的频率很低，所以专门总结了这篇文字。如果有什么错误还请各位大佬指正。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://juejin.im/post/5ab60c606fb9a028bc2db1d4" target="_blank" rel="noopener">Async +Await</a><br><a href="https://zhuanlan.zhihu.com/p/26505825" target="_blank" rel="noopener">精读 Async/Await 更优越的 6 大理由</a></p>
-
-      
-
-      
+  
     </div>
     <div class="article-info article-info-index">
-      
-      
+       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -243,18 +235,13 @@
       		
 		</ul>
 	</div>
-
-      
-
-      
-
-      
+ 
+  
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
+ 
 <nav id="article-nav">
   
   
@@ -264,9 +251,7 @@
     </a>
   
 </nav>
-
-
-<aside class="wrap-side-operation">
+  <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -293,20 +278,23 @@
         </div>
         
     </div>
-</aside>
+</aside>      <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
 
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "9437e614335121f463ea",
+    clientSecret: "da6cca93c9cb5276024764856c90767392beb9aa",
+    repo: "hexo-blog",
+    owner: "ch957869975",
+    admin: ["ch957869975"],
+    id: "Tue Mar 26 2019 09:00:26 GMT+0800",
+    distractionFreeMode: "true"
+  });
+  gitalk.render("gitalk-container");
+</script>
+    
 
           </div>
         </div>
@@ -393,15 +381,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -410,6 +394,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -429,15 +417,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>

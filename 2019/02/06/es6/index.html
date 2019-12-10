@@ -140,35 +140,27 @@
             <article id="post-es6" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       ES6其他特性
     </h1>
   
-
-        
-        <a href="/2019/02/06/es6/" class="archive-article-date">
+  <a href="/2019/02/06/es6/" class="archive-article-date">
   	<time datetime="2019-02-06T09:48:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-06</time>
-</a>
-        
-      </header>
+</a> 
+    </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-模板字符串"><a href="#1-模板字符串" class="headerlink" title="1.模板字符串"></a>1.模板字符串</h2><a id="more"></a>
+       <h2 id="1-模板字符串"><a href="#1-模板字符串" class="headerlink" title="1.模板字符串"></a>1.模板字符串</h2><a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> address = <span class="string">"南京"</span></span><br><span class="line"><span class="comment">//es5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"小明在"</span> + address + <span class="string">"工作"</span>)</span><br><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`小明在<span class="subst">$&#123;address&#125;</span>工作`</span>)</span><br></pre></td></tr></table></figure>
 <p>关于模板字符串还有许多其他的技巧</p>
 <h2 id="2-解构赋值"><a href="#2-解构赋值" class="headerlink" title="2.解构赋值"></a>2.解构赋值</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> people = &#123;</span><br><span class="line">  name: <span class="string">"lux"</span>,</span><br><span class="line">  age: <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> name = people.name</span><br><span class="line"><span class="keyword">const</span> age = people.age</span><br><span class="line"><span class="built_in">console</span>.log(name + <span class="string">" --- "</span> + age)</span><br><span class="line"><span class="comment">// 在es6之前我们是用上面这样的方法来取值的，一点毛病没有，es6之后我们是来使用解构的形式来取值的，像下面这样</span></span><br><span class="line"><span class="comment">//对象</span></span><br><span class="line"><span class="keyword">const</span> people = &#123;</span><br><span class="line">  name: <span class="string">"lux"</span>,</span><br><span class="line">  age: <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> &#123; name, age &#125; = people</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;name&#125;</span> --- <span class="subst">$&#123;age&#125;</span>`</span>)</span><br><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> color = [<span class="string">"red"</span>, <span class="string">"blue"</span>]</span><br><span class="line"><span class="keyword">const</span> [first, second] = color</span><br><span class="line"><span class="built_in">console</span>.log(first) <span class="comment">//'red'</span></span><br><span class="line"><span class="built_in">console</span>.log(second) <span class="comment">//'blue'</span></span><br></pre></td></tr></table></figure>
-
-      
-
-      
+  
     </div>
     <div class="article-info article-info-index">
-      
-      
+       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -183,18 +175,13 @@
       		
 		</ul>
 	</div>
-
-      
-
-      
-
-      
+ 
+  
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
+ 
 <nav id="article-nav">
   
     <a href="/2019/02/06/fibonacci/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -213,9 +200,7 @@
     </a>
   
 </nav>
-
-
-<aside class="wrap-side-operation">
+  <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -242,20 +227,23 @@
         </div>
         
     </div>
-</aside>
+</aside>      <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
 
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "9437e614335121f463ea",
+    clientSecret: "da6cca93c9cb5276024764856c90767392beb9aa",
+    repo: "hexo-blog",
+    owner: "ch957869975",
+    admin: ["ch957869975"],
+    id: "Wed Feb 06 2019 17:48:01 GMT+0800",
+    distractionFreeMode: "true"
+  });
+  gitalk.render("gitalk-container");
+</script>
+    
 
           </div>
         </div>
@@ -342,15 +330,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -359,6 +343,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -378,15 +366,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>

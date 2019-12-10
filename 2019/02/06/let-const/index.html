@@ -140,24 +140,20 @@
             <article id="post-let-const" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       ES6 之 let &amp; const
     </h1>
   
-
-        
-        <a href="/2019/02/06/let-const/" class="archive-article-date">
+  <a href="/2019/02/06/let-const/" class="archive-article-date">
   	<time datetime="2019-02-06T09:48:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-06</time>
-</a>
-        
-      </header>
+</a> 
+    </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="浅析-let-与-const"><a href="#浅析-let-与-const" class="headerlink" title="浅析 let 与 const"></a>浅析 let 与 const</h1><p>今天学习一下 ES6 的两种声明方式，得先从说<code>var</code>说起,</p>
+       <h1 id="浅析-let-与-const"><a href="#浅析-let-与-const" class="headerlink" title="浅析 let 与 const"></a>浅析 let 与 const</h1><p>今天学习一下 ES6 的两种声明方式，得先从说<code>var</code>说起,</p>
 <h2 id="先说var"><a href="#先说var" class="headerlink" title="先说var"></a>先说<code>var</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a === <span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 可以变形成</span></span><br><span class="line"><span class="keyword">var</span> value</span><br><span class="line"><span class="keyword">if</span> (a === <span class="literal">true</span>) &#123;</span><br><span class="line">  value = <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>只要不是新手，都应该明白这两个代码块是相等的。为什么呢,因为<code>var</code>声明存在变量提升，此时如果<code>a !== true</code>成立时,则<code>value</code>应该等于<code>undefined</code>,同理，<code>var</code>声明的<code>function</code>也是存在变量提升行为的。下面是一个 for 循环</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
@@ -171,14 +167,10 @@
 <h3 id="5-const-只能在声明的时候赋值"><a href="#5-const-只能在声明的时候赋值" class="headerlink" title="5.const 只能在声明的时候赋值"></a>5.const 只能在声明的时候赋值</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> value</span><br><span class="line">value = <span class="number">10</span> <span class="comment">// Uncaught SyntaxError: Missing initializer in const declaration</span></span><br></pre></td></tr></table></figure>
 <h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><p>个人觉得在实际开发中更应使用<code>const</code>保持变量的不变，在变量需要改变时才使用<code>let</code>,这样数据初始化后不会改变，避免了很多 bug 产生。</p>
 <p>晚安 🌛</p>
-
-      
-
-      
+  
     </div>
     <div class="article-info article-info-index">
-      
-      
+       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -193,18 +185,13 @@
       		
 		</ul>
 	</div>
-
-      
-
-      
-
-      
+ 
+  
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
+ 
 <nav id="article-nav">
   
     <a href="/2019/02/06/virtual-dom/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -223,9 +210,7 @@
     </a>
   
 </nav>
-
-
-<aside class="wrap-side-operation">
+  <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -252,20 +237,23 @@
         </div>
         
     </div>
-</aside>
+</aside>      <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
 
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "9437e614335121f463ea",
+    clientSecret: "da6cca93c9cb5276024764856c90767392beb9aa",
+    repo: "hexo-blog",
+    owner: "ch957869975",
+    admin: ["ch957869975"],
+    id: "Wed Feb 06 2019 17:48:58 GMT+0800",
+    distractionFreeMode: "true"
+  });
+  gitalk.render("gitalk-container");
+</script>
+    
 
           </div>
         </div>
@@ -352,15 +340,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -369,6 +353,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -388,15 +376,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>

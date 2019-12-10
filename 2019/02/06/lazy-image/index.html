@@ -140,24 +140,20 @@
             <article id="post-lazy-image" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       手把手实现图片懒加载
     </h1>
   
-
-        
-        <a href="/2019/02/06/lazy-image/" class="archive-article-date">
+  <a href="/2019/02/06/lazy-image/" class="archive-article-date">
   	<time datetime="2019-02-06T09:48:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-06</time>
-</a>
-        
-      </header>
+</a> 
+    </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>懒加载作为节约性能开支的优化项，已经必不可少。理所应当的成为前端必做工作之一。<br>针对这个老生常谈的话题，自己还是想亲自动手自己撸一个。</p>
+       <p>懒加载作为节约性能开支的优化项，已经必不可少。理所应当的成为前端必做工作之一。<br>针对这个老生常谈的话题，自己还是想亲自动手自己撸一个。</p>
 <h2 id="懒加载的原理"><a href="#懒加载的原理" class="headerlink" title="懒加载的原理"></a>懒加载的原理</h2><p>其实也不是什么难的原理，页面内部打的<code>&lt;img&gt;</code>标签如果没有<code>src</code>属性，浏览器就不会去发出请求进而加载图片资源,此时显示的是默认的占位图（或元素）,没有请求，性能自然没话说。这个时候我们要做的就是让出现在可视区内的图片发出请求，加载图片，通过 js 动态设置<code>src</code>。说干就干</p>
 <h2 id="开始实现懒加载"><a href="#开始实现懒加载" class="headerlink" title="开始实现懒加载"></a>开始实现懒加载</h2><p>一个问题，实际的 url 存在哪里？我们优先选择<code>data-*</code>自定义属性集，叫什么无所谓，你自己记住就好<br>随便写下 dom 结构，只是为了做简易 demo，实际开发中结构要和设计相关联。</p>
 <a id="more"></a>
@@ -172,14 +168,10 @@
 <p>此时，我们应该对<code>scroll</code>事件绑定节流事件才对。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">init() &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">this</span>._throttleFn = <span class="keyword">this</span>.throttle(<span class="keyword">this</span>.inViewShow)</span><br><span class="line">  <span class="built_in">document</span>.addEventListener(<span class="string">'scroll'</span>, <span class="keyword">this</span>._throttleFn)</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 卸载事件此时应该替换成</span></span><br><span class="line"><span class="built_in">document</span>.removeEventListener(<span class="string">'scroll'</span>, <span class="keyword">this</span>._throttleFn)</span><br></pre></td></tr></table></figure>
 <p>就这样，晚安！！:crescent_moon:</p>
-
-      
-
-      
+  
     </div>
     <div class="article-info article-info-index">
-      
-      
+       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -194,18 +186,13 @@
       		
 		</ul>
 	</div>
-
-      
-
-      
-
-      
+ 
+  
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
+ 
 <nav id="article-nav">
   
     <a href="/2019/02/06/let-const/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -224,9 +211,7 @@
     </a>
   
 </nav>
-
-
-<aside class="wrap-side-operation">
+  <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -253,20 +238,23 @@
         </div>
         
     </div>
-</aside>
+</aside>      <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
 
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "9437e614335121f463ea",
+    clientSecret: "da6cca93c9cb5276024764856c90767392beb9aa",
+    repo: "hexo-blog",
+    owner: "ch957869975",
+    admin: ["ch957869975"],
+    id: "Wed Feb 06 2019 17:48:47 GMT+0800",
+    distractionFreeMode: "true"
+  });
+  gitalk.render("gitalk-container");
+</script>
+    
 
           </div>
         </div>
@@ -353,15 +341,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -370,6 +354,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -389,15 +377,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>

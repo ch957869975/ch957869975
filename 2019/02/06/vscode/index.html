@@ -140,24 +140,20 @@
             <article id="post-vscode" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       vscode 插件与配置
     </h1>
   
-
-        
-        <a href="/2019/02/06/vscode/" class="archive-article-date">
+  <a href="/2019/02/06/vscode/" class="archive-article-date">
   	<time datetime="2019-02-06T09:29:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-06</time>
-</a>
-        
-      </header>
+</a> 
+    </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>所谓磨刀不误砍柴工，作为一个前端菜鸟更应该把刀磨快一点。<br>总结了一下我自己常用的 vscode 的插件以及 setting.json 如何配置，可以更好的提高开发效率。</p>
+       <p>所谓磨刀不误砍柴工，作为一个前端菜鸟更应该把刀磨快一点。<br>总结了一下我自己常用的 vscode 的插件以及 setting.json 如何配置，可以更好的提高开发效率。</p>
 <a id="more"></a>
 <h2 id="插件集合"><a href="#插件集合" class="headerlink" title="插件集合"></a>插件集合</h2><table>
 <thead>
@@ -276,14 +272,10 @@
 <h2 id="IDE-的配置-setting-json"><a href="#IDE-的配置-setting-json" class="headerlink" title="IDE 的配置 setting.json"></a>IDE 的配置 setting.json</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "fileheader.Author": "chenghao", //vscode-fileheader 使用</span><br><span class="line">  "fileheader.LastModifiedBy": "chenghao", //vscode-fileheader 使用</span><br><span class="line">  "editor.fontSize": 14, // 编辑器字号</span><br><span class="line">  "editor.tabSize": 2, // 1个制表符的缩进大小</span><br><span class="line">  "editor.lineHeight": 17, // 通过使用鼠标滚轮同时按住 Ctrl 可缩放编辑器的字体</span><br><span class="line">  "editor.mouseWheelZoom": true, // 行太长自动换行</span><br><span class="line">  "editor.wordWrap": "on",</span><br><span class="line">  "explorer.confirmDelete": false, // 控制文件资源管理器删除文件到废纸篓是否进行确认</span><br><span class="line">  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe", // 终端，mac可省略</span><br><span class="line">  "breadcrumbs.enabled": true, //启用面包屑导航</span><br><span class="line">  "workbench.editor.enablePreview": false, //打开文件不覆盖</span><br><span class="line">  "editor.formatOnSave": true, //保存时是否进行格式化</span><br><span class="line">  "search.exclude": &#123;</span><br><span class="line">    // 搜索黑名单</span><br><span class="line">    "**/node_modules": true,</span><br><span class="line">    "**/bower_components": true,</span><br><span class="line">    "**/dist": true,</span><br><span class="line">    "**/build": true,</span><br><span class="line">    "**/.git": true,</span><br><span class="line">    "**/.gitignore": true,</span><br><span class="line">    "**/.svn": true,</span><br><span class="line">    "**/.DS_Store": true,</span><br><span class="line">    "**/.idea": true,</span><br><span class="line">    "**/.vscode": false,</span><br><span class="line">    "**/yarn.lock": true</span><br><span class="line">  &#125;,</span><br><span class="line">  "files.associations": &#123;</span><br><span class="line">    // 配置文件关联，以便启用对应的智能提示，比如wxss使用css</span><br><span class="line">    "*.vue": "vue",</span><br><span class="line">    "*.wxss": "css"</span><br><span class="line">  &#125;,</span><br><span class="line">  "background.enabled": true, // background插件是否可用，以下是对background插件的配置</span><br><span class="line">  "background.useDefault": false,</span><br><span class="line">  "background.customImages": ["file:///F:/background/3.jpg"],</span><br><span class="line">  "background.useFront": false,</span><br><span class="line">  "background.style": &#123;</span><br><span class="line">    "content": "''",</span><br><span class="line">    "pointer-events": "none",</span><br><span class="line">    "position": "absolute",</span><br><span class="line">    "top": "0",</span><br><span class="line">    "right": "0",</span><br><span class="line">    "width": "100%",</span><br><span class="line">    "height": "100%",</span><br><span class="line">    "z-index": "99999",</span><br><span class="line">    "background.repeat": "no-repeat",</span><br><span class="line">    "background-size": "contain",</span><br><span class="line">    "opacity": 0.1</span><br><span class="line">  &#125;,</span><br><span class="line">  "prettier.semi": false, //是否使用分号</span><br><span class="line">  "prettier.tabWidth": 2,</span><br><span class="line">  "prettier.singleQuote": true, // 是否使用单引号，true则在js中不能使用双引号</span><br><span class="line">  "prettier.printWidth": 120, //每行代码在该数字范围内，分辨率大可以把它写大些</span><br><span class="line">  "eslint.validate": [</span><br><span class="line">    // eslint 验证文件类型</span><br><span class="line">    "javascript",</span><br><span class="line">    "javascriptreact",</span><br><span class="line">    &#123; "language": "vue", "autoFix": true &#125;,</span><br><span class="line">    &#123; <span class="attr">"language"</span>: <span class="string">"html"</span>, <span class="attr">"autoFix"</span>: <span class="literal">true</span> &#125;</span><br><span class="line">  ],</span><br><span class="line">  "eslint.autoFixOnSave": true, // ctrl+s 保存时自动修正格式错误的js代码</span><br><span class="line">  "vetur.format.defaultFormatter.js": "vscode-typescript", //格式化的风格覆盖vscode的默认配置</span><br><span class="line">  "javascript.format.insertSpaceBeforeFunctionParenthesis": true, // 函数定义与后面括号之间增加一个空格</span><br><span class="line">  "vetur.format.defaultFormatter.html": "js-beautify-html", //格式化.vue中html</span><br><span class="line">  "vetur.format.defaultFormatterOptions": &#123;</span><br><span class="line">    "js-beautify-html": &#123;</span><br><span class="line">      "wrap_attributes": "force" //属性强制折行对齐</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>真正做到拿来既用，希望对你有帮助 💕</p>
 <p>晚安 🌙</p>
-
-      
-
-      
+  
     </div>
     <div class="article-info article-info-index">
-      
-      
+       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -298,18 +290,13 @@
       		
 		</ul>
 	</div>
-
-      
-
-      
-
-      
+ 
+  
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
+ 
 <nav id="article-nav">
   
     <a href="/2019/02/06/loading/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -328,9 +315,7 @@
     </a>
   
 </nav>
-
-
-<aside class="wrap-side-operation">
+  <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -357,20 +342,23 @@
         </div>
         
     </div>
-</aside>
+</aside>      <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
 
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "9437e614335121f463ea",
+    clientSecret: "da6cca93c9cb5276024764856c90767392beb9aa",
+    repo: "hexo-blog",
+    owner: "ch957869975",
+    admin: ["ch957869975"],
+    id: "Wed Feb 06 2019 17:29:38 GMT+0800",
+    distractionFreeMode: "true"
+  });
+  gitalk.render("gitalk-container");
+</script>
+    
 
           </div>
         </div>
@@ -457,15 +445,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,6 +458,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -493,15 +481,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>

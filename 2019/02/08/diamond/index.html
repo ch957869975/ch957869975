@@ -145,24 +145,20 @@
             <article id="post-diamond" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       如何使用css绘制钻石
     </h1>
   
-
-        
-        <a href="/2019/02/08/diamond/" class="archive-article-date">
+  <a href="/2019/02/08/diamond/" class="archive-article-date">
   	<time datetime="2019-02-08T03:45:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-08</time>
-</a>
-        
-      </header>
+</a> 
+    </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>听说你想要钻石 💎？买不起，还是用 css 来画一个吧，但你敢送给自己女朋友，不保证不被打。</p>
+       <p>听说你想要钻石 💎？买不起，还是用 css 来画一个吧，但你敢送给自己女朋友，不保证不被打。</p>
 <p>下午两点要相亲，要不把这个送相亲对象？</p>
 <h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>先看下效果吧，想一想怎么构图先。<br><img src="https://user-gold-cdn.xitu.io/2019/2/8/168caeba3f9f72ad?w=494&amp;h=424&amp;f=jpeg&amp;s=18726" alt=""></p>
 <p>上图是已经完成的效果。钻石整体都是由三角形构成，上五下三。上边是五个等边三角形，其中有 2 个是倒扣过来填补三个之间的空缺。下边是一个等腰三角形和 2 个对称的钝角三角形，差不多就是这样。（钝角三角形不是太好理解，至少我没成功，这里的钝角三角形是用等腰三角形通过<code>transform: skew()</code>实现的）</p>
@@ -186,14 +182,10 @@
 <p>祝新年快乐，万事顺意。愿往后的生活没有相亲和 IE 浏览器。</p>
 <p>效果已出，感谢阅读。<br><a href="https://codepen.io/ch957869975/pen/VgrNyW" target="_blank" rel="noopener">源码在此</a> 或访问 <a href="https://ch957869975.github.io/hexo-blog/">我的博客</a></p>
 <p>送个福利，<a href="http://apps.eky.hk/css-triangle-generator/zh-hant" target="_blank" rel="noopener">css 三角形产生器</a> 。</p>
-
-      
-
-      
+  
     </div>
     <div class="article-info article-info-index">
-      
-      
+       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -208,18 +200,13 @@
       		
 		</ul>
 	</div>
-
-      
-
-      
-
-      
+ 
+  
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
+ 
 <nav id="article-nav">
   
     <a href="/2019/02/16/editor/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -238,9 +225,7 @@
     </a>
   
 </nav>
-
-
-<aside class="wrap-side-operation">
+  <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -267,20 +252,23 @@
         </div>
         
     </div>
-</aside>
+</aside>      <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
 
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "9437e614335121f463ea",
+    clientSecret: "da6cca93c9cb5276024764856c90767392beb9aa",
+    repo: "hexo-blog",
+    owner: "ch957869975",
+    admin: ["ch957869975"],
+    id: "Fri Feb 08 2019 11:45:49 GMT+0800",
+    distractionFreeMode: "true"
+  });
+  gitalk.render("gitalk-container");
+</script>
+    
 
           </div>
         </div>
@@ -367,15 +355,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -384,6 +368,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -403,15 +391,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>

@@ -9,18 +9,18 @@
     <link rel="dns-prefetch" href="https://ch957869975.github.io">
     <title>ES6 之箭头函数 | 记事本</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="为了梳理知识点，写一下 8102 年的箭头函数(ps:我写分号了，不过被我配置的 ide 的格式规则给抹平了)">
+    <meta name="description" content="为了梳理知识点，写一下 8102 年的箭头函数(ps:我写分号了，不过被我配置的 ide 的格式规则给抹平了)；">
 <meta name="keywords" content="JavaScript,ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6 之箭头函数">
 <meta property="og:url" content="https://ch957869975.github.io/2019/02/06/arrow/index.html">
 <meta property="og:site_name" content="记事本">
-<meta property="og:description" content="为了梳理知识点，写一下 8102 年的箭头函数(ps:我写分号了，不过被我配置的 ide 的格式规则给抹平了)">
+<meta property="og:description" content="为了梳理知识点，写一下 8102 年的箭头函数(ps:我写分号了，不过被我配置的 ide 的格式规则给抹平了)；">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-27T03:07:59.299Z">
+<meta property="og:updated_time" content="2019-11-27T09:02:03.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6 之箭头函数">
-<meta name="twitter:description" content="为了梳理知识点，写一下 8102 年的箭头函数(ps:我写分号了，不过被我配置的 ide 的格式规则给抹平了)">  
+<meta name="twitter:description" content="为了梳理知识点，写一下 8102 年的箭头函数(ps:我写分号了，不过被我配置的 ide 的格式规则给抹平了)；">  
     <link rel="icon" href="/assets/favicon.ico">
      <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
     <style type="text/css">
@@ -140,24 +140,20 @@
             <article id="post-arrow" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+    <header class="article-header">
+      
   
     <h1 class="article-title" itemprop="name">
       ES6 之箭头函数
     </h1>
   
-
-        
-        <a href="/2019/02/06/arrow/" class="archive-article-date">
+  <a href="/2019/02/06/arrow/" class="archive-article-date">
   	<time datetime="2019-02-06T09:47:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-06</time>
-</a>
-        
-      </header>
+</a> 
+    </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p>为了梳理知识点，写一下 8102 年的箭头函数<br>(ps:我写分号了，不过被我配置的 ide 的格式规则给抹平了)</p>
+       <p>为了梳理知识点，写一下 8102 年的箭头函数<br>(ps:我写分号了，不过被我配置的 ide 的格式规则给抹平了)；</p>
 <a id="more"></a>
 <h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fun = <span class="function"><span class="params">value</span> =&gt;</span> value</span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"><span class="keyword">const</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> value</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 多个参数并需要返回对象的情况下可以这样</span></span><br><span class="line"><span class="comment">// 两个参数的默认值为0，es6设置默认值的方法，解构赋值时也可以设置默认值</span></span><br><span class="line"><span class="keyword">const</span> fun = <span class="function">(<span class="params">a = <span class="number">0</span>, b = <span class="number">0</span></span>) =&gt;</span> (&#123; <span class="attr">total</span>: a + b &#125;)</span><br><span class="line"><span class="comment">// 参数解构并设置默认值的写法</span></span><br><span class="line"><span class="keyword">const</span> fun = <span class="function">(<span class="params">&#123; a = <span class="number">0</span>, b = <span class="number">0</span> &#125;</span>) =&gt;</span> (&#123; <span class="attr">total</span>: a + b &#125;)</span><br><span class="line"><span class="comment">// 可以这样调用</span></span><br><span class="line"><span class="keyword">const</span> ret = fun(&#123; <span class="attr">a</span>: <span class="number">10</span>, <span class="attr">b</span>: <span class="number">20</span> &#125;)</span><br><span class="line"><span class="comment">//或使用默认值</span></span><br><span class="line"><span class="keyword">const</span> ret = fun()</span><br></pre></td></tr></table></figure>
 <h2 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h2><h3 id="1-不能被-new"><a href="#1-不能被-new" class="headerlink" title="1.不能被 new"></a>1.不能被 new</h3><p>就是不能通过 new 关键字被调用, js 函数的内部属性中包含了[[Construct]],当 new 实例发生时，调用该方法。<br>通俗点讲就是 new 操作符执行了一个内部的 function 从而创建了一个空对象，这个对象原型指向构造函数的 prototype，执行构造函数后返回这个对象（return this）。<br>but，箭头函数没有这个构造器，所以 new 时会抛出一个错误</p>
@@ -192,14 +188,10 @@
 <p>在这里再额外提一点，就是注意 bindEvent 和 setBgColor 在这里使用的是普通函数的形式，而非箭头函数，如果我们改成箭头函数，会导致函数里的 this 指向 window 对象 (非严格模式下)。</p>
 <p>最后，因为箭头函数没有 this，所以也不能用 call()、apply()、bind() 这些方法改变 this 的指向，可以看一个例子：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> result = <span class="function">(<span class="params">(</span>) =&gt;</span> <span class="keyword">this</span>.value).bind(&#123; <span class="attr">value</span>: <span class="number">2</span> &#125;)()</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-
-      
-
-      
+  
     </div>
     <div class="article-info article-info-index">
-      
-      
+       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -214,18 +206,13 @@
       		
 		</ul>
 	</div>
-
-      
-
-      
-
-      
+ 
+  
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
+ 
 <nav id="article-nav">
   
     <a href="/2019/02/06/es6/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -244,9 +231,7 @@
     </a>
   
 </nav>
-
-
-<aside class="wrap-side-operation">
+  <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
@@ -273,20 +258,23 @@
         </div>
         
     </div>
-</aside>
+</aside>      <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
 
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: "9437e614335121f463ea",
+    clientSecret: "da6cca93c9cb5276024764856c90767392beb9aa",
+    repo: "hexo-blog",
+    owner: "ch957869975",
+    admin: ["ch957869975"],
+    id: "Wed Feb 06 2019 17:47:51 GMT+0800",
+    distractionFreeMode: "true"
+  });
+  gitalk.render("gitalk-container");
+</script>
+    
 
           </div>
         </div>
@@ -373,15 +361,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -390,6 +374,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -409,15 +397,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>

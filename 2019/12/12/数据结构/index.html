@@ -9,18 +9,18 @@
     <link rel="dns-prefetch" href="https://ch957869975.github.io">
     <title>数据结构的一些总结 | 记事本</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="JavaScript 数据结构近期学习记录。（示例代码使用 ES6 中class 声明类）  栈栈结构的特点是先进后出，新进入或者待删除的元素，称为栈顶，另一端叫栈底。比如一摞书的抽象模型。 基于数组的栈1234567891011121314151617181920212223242526272829class Stack &amp;#123;  constructor() &amp;#123;    this.">
-<meta name="keywords" content="心情">
+    <meta name="description" content="JavaScript 数据结构近期学习记录。（示例代码使用 ES6 中class 声明类）">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构的一些总结">
 <meta property="og:url" content="https://ch957869975.github.io/2019/12/12/数据结构/index.html">
 <meta property="og:site_name" content="记事本">
-<meta property="og:description" content="JavaScript 数据结构近期学习记录。（示例代码使用 ES6 中class 声明类）  栈栈结构的特点是先进后出，新进入或者待删除的元素，称为栈顶，另一端叫栈底。比如一摞书的抽象模型。 基于数组的栈1234567891011121314151617181920212223242526272829class Stack &amp;#123;  constructor() &amp;#123;    this.">
+<meta property="og:description" content="JavaScript 数据结构近期学习记录。（示例代码使用 ES6 中class 声明类）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-11T02:32:21.874Z">
+<meta property="og:updated_time" content="2019-12-11T02:38:02.090Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构的一些总结">
-<meta name="twitter:description" content="JavaScript 数据结构近期学习记录。（示例代码使用 ES6 中class 声明类）  栈栈结构的特点是先进后出，新进入或者待删除的元素，称为栈顶，另一端叫栈底。比如一摞书的抽象模型。 基于数组的栈1234567891011121314151617181920212223242526272829class Stack &amp;#123;  constructor() &amp;#123;    this.">  
+<meta name="twitter:description" content="JavaScript 数据结构近期学习记录。（示例代码使用 ES6 中class 声明类）">  
     <link rel="icon" href="/assets/favicon.ico">
      <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
     <style type="text/css">
@@ -154,6 +154,7 @@
     
     <div class="article-entry" itemprop="articleBody">
        <h1 id="JavaScript-数据结构"><a href="#JavaScript-数据结构" class="headerlink" title="JavaScript 数据结构"></a>JavaScript 数据结构</h1><p>近期学习记录。（示例代码使用 ES6 中<code>class</code> 声明<code>类</code>）</p>
+<a id="more"></a>
 <hr>
 <h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈结构的特点是<code>先进后出</code>，新进入或者待删除的元素，称为<code>栈顶</code>，另一端叫<code>栈底</code>。比如一摞书的抽象模型。</p>
 <h3 id="基于数组的栈"><a href="#基于数组的栈" class="headerlink" title="基于数组的栈"></a>基于数组的栈</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.items = [];</span><br><span class="line">  &#125;</span><br><span class="line">  push(element) &#123;</span><br><span class="line">    <span class="comment">// 添加一个元素到栈顶</span></span><br><span class="line">    <span class="keyword">this</span>.items.push(element);</span><br><span class="line">  &#125;</span><br><span class="line">  pop() &#123;</span><br><span class="line">    <span class="comment">// 移除栈顶的元素，同时返回被移除的元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.items.pop();</span><br><span class="line">  &#125;</span><br><span class="line">  peek() &#123;</span><br><span class="line">    <span class="comment">//返回栈顶的元素，不对栈做任何修改</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.items[<span class="keyword">this</span>.items.length - <span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  clear() &#123;</span><br><span class="line">    <span class="comment">// 清空栈</span></span><br><span class="line">    <span class="keyword">this</span>.items = [];</span><br><span class="line">  &#125;</span><br><span class="line">  isEmpty() &#123;</span><br><span class="line">    <span class="comment">// 栈是否为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.size() === <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  size() &#123;</span><br><span class="line">    <span class="comment">// 栈的长度</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.items.length;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -194,7 +195,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -349,10 +350,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
@@ -362,6 +359,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -381,15 +382,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>

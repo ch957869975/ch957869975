@@ -131,7 +131,7 @@
               type +
               '" data-src="' +
               minSrc +
-              '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
+              '" src="/assets/empty.png" itemprop="thumbnail" onload="lzld(this)">\
                 </a>\
                 <figcaption style="display:none" itemprop="caption description">' +
               data.text[i] +

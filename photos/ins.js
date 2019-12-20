@@ -582,7 +582,7 @@
           };
           var changeHandle = function changeHandle() {
             var item = gallery.currItem;
-            // stopVideoHandle();
+            stopVideoHandle();
             if (item.type === "video") {
               var $ctn = item.container;
               var style = $ctn.getElementsByClassName("pswp__img")[0].style;

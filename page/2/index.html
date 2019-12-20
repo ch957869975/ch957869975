@@ -144,6 +144,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-async" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/26/async/">我们为什么需要async/await?</a>
+    </h1>
+  
+  <a href="/2019/03/26/async/" class="archive-article-date">
+  	<time datetime="2019-03-26T01:00:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
+</a> 
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+       <p><img src="https://user-gold-cdn.xitu.io/2019/3/25/169b4d7c57ad2ba6?w=1270&amp;h=642&amp;f=png&amp;s=61453" alt=""></p>
+<h2 id="async-是什么-amp-async-的基本用法"><a href="#async-是什么-amp-async-的基本用法" class="headerlink" title="async 是什么 &amp; async 的基本用法"></a>async 是什么 &amp; async 的基本用法</h2><blockquote>
+<p><code>async function</code> 声明用于定义一个返回 <code>AsyncFunction</code> 对象的异步函数。异步函数是指通过事件循环异步执行的函数，它会通过一个隐式的 <code>Promise</code> 返回其结果。但是如果你的代码使用了异步函数，它的语法和结构会更像是标准的同步函数。<br>引用自 MDN。</p>
+</blockquote>
+<p>js 的方法和语法糖多数都是语义化的，从字面意思上来说，async 代表<code>异步的</code>，用来表示一个异步的函数，返回一个<code>promise</code>,可以使用 then 方法添加回调。<br>可以看下这个例子：</p> 
+      <a class="article-more-a" href="/2019/03/26/async/#more">more >></a>
+        
+    </div>
+    <div class="article-info article-info-index">
+       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+ 
+ 
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2019/03/26/async/">展开全文 >></a>
+      </p>
+       
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+ <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside> 
+
+  
     <article id="post-hotkey" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -404,72 +467,6 @@
 </aside> 
 
   
-    <article id="post-let-const" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/06/let-const/">ES6 之 let &amp; const</a>
-    </h1>
-  
-  <a href="/2019/02/06/let-const/" class="archive-article-date">
-  	<time datetime="2019-02-06T09:48:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-06</time>
-</a> 
-    </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-       <h1 id="浅析-let-与-const"><a href="#浅析-let-与-const" class="headerlink" title="浅析 let 与 const"></a>浅析 let 与 const</h1><p>今天学习一下 ES6 的两种声明方式，得先从说<code>var</code>说起,</p>
-<h2 id="先说var"><a href="#先说var" class="headerlink" title="先说var"></a>先说<code>var</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a === <span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> value = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 可以变形成</span></span><br><span class="line"><span class="keyword">var</span> value</span><br><span class="line"><span class="keyword">if</span> (a === <span class="literal">true</span>) &#123;</span><br><span class="line">  value = <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>只要不是新手，都应该明白这两个代码块是相等的。为什么呢,因为<code>var</code>声明存在变量提升，此时如果<code>a !== true</code>成立时,则<code>value</code>应该等于<code>undefined</code>,同理，<code>var</code>声明的<code>function</code>也是存在变量提升行为的。下面是一个 for 循环</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i) <span class="comment">// 10</span></span><br></pre></td></tr></table></figure> 
-      <a class="article-more-a" href="/2019/02/06/let-const/#more">more >></a>
-        
-    </div>
-    <div class="article-info article-info-index">
-       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
- 
- 
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2019/02/06/let-const/">展开全文 >></a>
-      </p>
-       
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
- <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside> 
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -570,19 +567,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,7 +587,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">懒加载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,7 +607,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color5">前端基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
             
             <div class="clearfix"></div>

@@ -144,6 +144,156 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-字符串" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/20/字符串/">【前端基础】字符串</a>
+    </h1>
+  
+  <a href="/2019/12/20/字符串/" class="archive-article-date">
+  	<time datetime="2019-12-20T02:42:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-20</time>
+</a> 
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+       <p>在 <code>javascript</code> 中，文本数据宝贝作为字符串存储，字符没有单独的类型。字符串的内部格式总是 <code>utf-16</code>，但是它不会绑定到页面编码中。</p>
+<h2 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h2><p>字符串可以包含在 <code>单引号</code>， <code>双引号</code>和<code>反引号</code>之中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> double = <span class="string">"芬达"</span>;</span><br><span class="line"><span class="keyword">let</span> backticks = <span class="string">`芬达`</span>;</span><br></pre></td></tr></table></figure>
+<p>单引号 和 双引号 的本质是一样的，但是 反引号 允许我们通过 <code>${...}</code> 将任何表达式嵌入到字符串中，且允许字符串跨行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">"芬达"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`我的名字是<span class="subst">$&#123;name&#125;</span>`</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> str1 = <span class="string">`1</span></span><br><span class="line"><span class="string">            2</span></span><br><span class="line"><span class="string">            3`</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><p>常见特殊字符如下</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\n</code></td>
+<td>换行</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>回车：不单独使用。window 文本文件使用两个字符<code>\r\n</code>的组合来表示换行符</td>
+</tr>
+<tr>
+<td><code>\&#39;</code> <code>\&quot;</code></td>
+<td>引号</td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td>反斜线</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>制表符</td>
+</tr>
+</tbody>
+</table>
+<h2 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h2><p><code>length</code> 是字符串的长度，ru</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"ab\n"</span>.length); <span class="comment">// 3; \n 是特殊字符，所以长度确实为3</span></span><br></pre></td></tr></table></figure>
+<h2 id="访问字符"><a href="#访问字符" class="headerlink" title="访问字符"></a>访问字符</h2><p>在<code>index</code>位置获取一个字符，可以使用<code>[index]</code> 或者调用 <code>str.charAt(index)</code>。<code>index</code> 从 <code>0</code>开始。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">`Hello`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第一个字符</span></span><br><span class="line">alert(str[<span class="number">0</span>]); <span class="comment">// H</span></span><br><span class="line">alert(str.charAt(<span class="number">0</span>)); <span class="comment">// H</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 最后一个字符</span></span><br><span class="line">alert(str[str.length - <span class="number">1</span>]); <span class="comment">// o</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> char <span class="keyword">of</span> <span class="string">"Hello"</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(char); <span class="comment">// H,e,l,l,o （char 变为“H”，然后是“e”，然后是“l”等）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>两种方法的区别是 ,如果没有找到字符，<code>[index]</code>返回<code>undefined</code>, 而 <code>charAt</code>返回的是一个空字符串。<br>我们可以使用 <code>for..of..</code> 遍历字符串，如上</p>
+<p><img src="https://gitee.com/fenda-tz/images/raw/master/K4RfVh.png" alt=""></p>
+<h2 id="字符串不可变"><a href="#字符串不可变" class="headerlink" title="字符串不可变"></a>字符串不可变</h2><p>在 js 中，字符串不可更改，因为他是基本类型。仔细想想为什么？<br><img src="https://gitee.com/fenda-tz/images/raw/master/gMHEYH.png" alt=""></p>
+<h2 id="改变大小写"><a href="#改变大小写" class="headerlink" title="改变大小写"></a>改变大小写</h2><p><code>toLowerCase</code> 和 <code>toUpperCase</code> 可以改变大小写。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"Interface"</span>.toLowerCase());</span><br><span class="line">alert(<span class="string">"Interface"</span>.toUpperCase());</span><br></pre></td></tr></table></figure>
+<h2 id="查找子字符串"><a href="#查找子字符串" class="headerlink" title="查找子字符串"></a>查找子字符串</h2><p>方法有多个，如下</p>
+<h3 id="str-indexOf"><a href="#str-indexOf" class="headerlink" title="str.indexOf"></a>str.indexOf</h3><p>从给定位置<code>index</code>起，在 str 中查找子串，如果没有找到，则返回 -1，否则返回匹配成功的位置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"Widget with id"</span>;</span><br><span class="line"></span><br><span class="line">alert(str.indexOf(<span class="string">"Widget"</span>)); <span class="comment">// 0，因为 'Widget' 一开始就被找到</span></span><br><span class="line">alert(str.indexOf(<span class="string">"widget"</span>)); <span class="comment">// -1，没有找到，检索是大小写敏感的</span></span><br><span class="line"></span><br><span class="line">alert(str.indexOf(<span class="string">"id"</span>)); <span class="comment">// 1，"id" 在位置 1 处（……idget 和 id）</span></span><br></pre></td></tr></table></figure>
+<p>可选的第二个参数允许我们从给定的位置开始检索，例如 <code>id</code>第一次出现的位置是 1，查询下一个存在的位置时，我们从 2 开始检索</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"Widget with id"</span>;</span><br><span class="line">alert(str.indexOf(<span class="string">"id"</span>, <span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="includes-startsWith-endsWith"><a href="#includes-startsWith-endsWith" class="headerlink" title="includes, startsWith, endsWith"></a>includes, startsWith, endsWith</h3><p>str.includes(substr, pos) 取决于 str 是否包含 substr 来返回一个布尔值，第二个参数 pos 同上。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"Widget with id"</span>.includes(<span class="string">"Widget"</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello"</span>.includes(<span class="string">"Bye"</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>方法 <code>startsWith</code> 和 <code>endsWith</code> 就如同字面含义表述的那样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"Widget"</span>.startsWith(<span class="string">"Wid"</span>)); <span class="comment">// true，“Widget”以“Wid”开始</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Widget"</span>.endsWith(<span class="string">"get"</span>)); <span class="comment">// true，“Widget”以“get”结束</span></span><br></pre></td></tr></table></figure>
+<h2 id="获取子字符串"><a href="#获取子字符串" class="headerlink" title="获取子字符串"></a>获取子字符串</h2><p>js 中获取子字符串有三种方法： <code>substring</code>, <code>substr</code>, <code>slice</code></p>
+<h3 id="str-slice-start-end"><a href="#str-slice-start-end" class="headerlink" title="str.slice(start[, end])"></a><code>str.slice(start[, end])</code></h3><p>返回从<code>start</code>到（但不包括）<code>end</code> 的字符串部分。如果没有第二个参数，<code>slice</code>运行到字符串的末尾</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"stringify"</span>;</span><br><span class="line">alert(str.slice(<span class="number">0</span>, <span class="number">5</span>)); <span class="comment">// 'strin', 从 0 到 5 的子字符串（不包括 5）</span></span><br><span class="line">alert(str.slice(<span class="number">0</span>, <span class="number">1</span>)); <span class="comment">// 's', 从 0 到 1，但不包括 1，所以只有在 0 的字符</span></span><br><span class="line">alert(str.slice(<span class="number">2</span>)); <span class="comment">// 从第二个位置直到结束</span></span><br></pre></td></tr></table></figure>
+<p><code>start/end</code> 有可能是复制，意思是位置从字符串结尾计算</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"stringify"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从右边的第四个位置开始，在右边的第一个位置结束</span></span><br><span class="line">alert(str.slice(<span class="number">-4</span>, <span class="number">-1</span>)); <span class="comment">// */!</span></span><br></pre></td></tr></table></figure>
+<h3 id="str-substring-start-end"><a href="#str-substring-start-end" class="headerlink" title="str.substring(start [, end])"></a><code>str.substring(start [, end])</code></h3><p>返回<code>start</code> 和 <code>end</code> <b>之间</b>的字符串部分，几乎与<code>slice</code>相同， 但它 允许 <code>start</code> 大于 <code>end</code>, 不支持负参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"stringify"</span>;</span><br><span class="line">str.substring(<span class="number">2</span>, <span class="number">6</span>); <span class="comment">// ring</span></span><br><span class="line">str.substring(<span class="number">6</span>, <span class="number">2</span>); <span class="comment">// ring</span></span><br></pre></td></tr></table></figure>
+<h3 id="str-substr-start-length"><a href="#str-substr-start-length" class="headerlink" title="str.substr(start [, length])"></a><code>str.substr(start [, length])</code></h3><p>返回从 <code>start</code>开始给定<code>length</code>的字符串部分，与上两个方法的区别在于是这里指定的是 <code>length</code> 而 不是 <code>index</code>。<br>第一个参数可为负数，从结尾算起。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"stringify"</span>;</span><br><span class="line">str.substr(<span class="number">2</span>, <span class="number">4</span>); <span class="comment">// ring，从第二位获得 4 个字符</span></span><br><span class="line">str.substr(<span class="number">-4</span>, <span class="number">2</span>); <span class="comment">// gi，从第 4 位获得 2 个字符</span></span><br></pre></td></tr></table></figure>
+<h3 id="汇总一下"><a href="#汇总一下" class="headerlink" title="汇总一下"></a>汇总一下</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>选择方式</th>
+<th>负号参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>slice(start, end)</code></td>
+<td>从 start 到 end (不含 end)</td>
+<td>允许</td>
+</tr>
+<tr>
+<td><code>substring(start, end)</code></td>
+<td>start 与 end 之间</td>
+<td>负值代表 0</td>
+</tr>
+<tr>
+<td><code>substr(start, length)</code></td>
+<td>从 start 开始获取长为 length 的字符串</td>
+<td>允许 start 为负数</td>
+</tr>
+</tbody>
+</table>
+  
+    </div>
+    <div class="article-info article-info-index">
+       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">String</a>
+        		</li>
+      		
+		</ul>
+	</div>
+ 
+ 
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2019/12/20/字符串/">展开全文 >></a>
+      </p>
+       
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+ <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside> 
+
+  
     <article id="post-庆余年" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -382,69 +532,6 @@
 </aside> 
 
   
-    <article id="post-async" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/26/async/">我们为什么需要async/await?</a>
-    </h1>
-  
-  <a href="/2019/03/26/async/" class="archive-article-date">
-  	<time datetime="2019-03-26T01:00:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
-</a> 
-    </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-       <p><img src="https://user-gold-cdn.xitu.io/2019/3/25/169b4d7c57ad2ba6?w=1270&amp;h=642&amp;f=png&amp;s=61453" alt=""></p>
-<h2 id="async-是什么-amp-async-的基本用法"><a href="#async-是什么-amp-async-的基本用法" class="headerlink" title="async 是什么 &amp; async 的基本用法"></a>async 是什么 &amp; async 的基本用法</h2><blockquote>
-<p><code>async function</code> 声明用于定义一个返回 <code>AsyncFunction</code> 对象的异步函数。异步函数是指通过事件循环异步执行的函数，它会通过一个隐式的 <code>Promise</code> 返回其结果。但是如果你的代码使用了异步函数，它的语法和结构会更像是标准的同步函数。<br>引用自 MDN。</p>
-</blockquote>
-<p>js 的方法和语法糖多数都是语义化的，从字面意思上来说，async 代表<code>异步的</code>，用来表示一个异步的函数，返回一个<code>promise</code>,可以使用 then 方法添加回调。<br>可以看下这个例子：</p> 
-      <a class="article-more-a" href="/2019/03/26/async/#more">more >></a>
-        
-    </div>
-    <div class="article-info article-info-index">
-       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
- 
- 
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2019/03/26/async/">展开全文 >></a>
-      </p>
-       
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
- <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside> 
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -545,19 +632,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">图形</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,7 +652,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">懒加载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,7 +672,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color5">前端基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
             
             <div class="clearfix"></div>

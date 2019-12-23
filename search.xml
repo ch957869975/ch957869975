@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【前端基础】变量</title>
+    <url>/2019/12/23/%E5%8F%98%E9%87%8F/</url>
+    <content><![CDATA[<p>变量是数据的存储，在 js 中，可以通过<code>var</code>, <code>let</code> 和 <code>const</code> 三个关键字来声明新的变量，其中，<code>var</code> 是早期规范，其余两者是<code>es6</code>新增。</p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>之前有讨论过，<a href="http://www.plutos.net.cn/2019/02/06/let-const/" target="_blank" rel="noopener">查看这里</a></p>
+<a id="more"></a>
+<h2 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h2><p>js 中变量命名的两个规则：</p>
+<ul>
+<li>变量名称必须仅包含字母，数字，符号<code>$</code>和<code>_</code></li>
+<li>首字符不能是数字</li>
+</ul>
+<p>如果命名包含多个单词，通常采用的事驼峰时命名法，也就是单词一个接一个，除了第一个单词，其他的每个单词都要以大写字母开头：<code>myFavoriteBook</code>。</p>
+<p>美元符号<code>$</code>和下划线<code>_</code>可以用于变量命名，他们是正常的符号，与字母无异。</p>
+<p>我们可以使用任何语言来命名变量，技术上讲，完全没有问题，但是，如果代码里出现了这个情况，我一定会骂死这么写的那个人。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 错误的示范</span></span><br><span class="line"><span class="keyword">let</span> 名字 = <span class="string">"芬达"</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h2><p>在大多数的编程语言中，有一些单词被应用于语言内部本身，所以当我们使用这些词语进行编程操作时是行不通的。比如<code>let</code> <code>class</code> <code>return</code>等等。这里有一张<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords" target="_blank" rel="noopener">保留字列表</a>, 我们在 code 的时候应该避免使用它们</p>
+<h2 id="非严格模式下的赋值"><a href="#非严格模式下的赋值" class="headerlink" title="非严格模式下的赋值"></a>非严格模式下的赋值</h2><p>一般情况下，我们在使用一个变量之前要先声明它。但早期的代码中，我们可以不进行声明变量，直接用过赋值来创建一个变量，当我们没有启用 严格模式时，这是可以工作的。<br><img src="https://gitee.com/fenda-tz/images/raw/master/CAcGjN.png" alt=""><br>当开启严格模式后，就会报错。<br><img src="https://gitee.com/fenda-tz/images/raw/master/g0hcCI.png" alt=""></p>
+<p>ps: 在 chrome 的 console 面板中，直接输入 <code>&quot;use strict&quot;</code> 并不生效，原因是它的原理是<code>eval</code> 方法，所以我们写成立即执行函数，因为严格模式不仅可以针对脚本，也可以针对函数，但是需要把严格模式的声明放置在函数体的第一行。</p>
+<h2 id="变量的正确命名"><a href="#变量的正确命名" class="headerlink" title="变量的正确命名"></a>变量的正确命名</h2><p>一个变量名称应该有一个清晰明显的含义进行描述所存储的数据。<br><img src="https://gitee.com/fenda-tz/images/raw/master/download.jpg" alt=""></p>
+<p>给变量起名字绝对是一个人代码能力的体现之一，声明变量之前，花点时间思考他的更好的命名，一些规则可以遵循：</p>
+<ul>
+<li>使用易读的命名，如<code>userName</code></li>
+<li>离 诸如 <code>a</code> <code>b</code> <code>c</code> 这种缩写和命名远点，除非你知道你是在做什么</li>
+<li>变量名在能够准确表达变量的同时要足够简洁，不好的例子就是 <code>data</code> 和 <code>value</code>, 相当于什么都没说</li>
+<li>尽量和团队成员的命名习惯保持一致</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>前端基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【前端基础】字符串</title>
     <url>/2019/12/20/%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<p>在 <code>javascript</code> 中，文本数据宝贝作为字符串存储，字符没有单独的类型。字符串的内部格式总是 <code>utf-16</code>，但是它不会绑定到页面编码中。</p>
@@ -61,7 +92,7 @@
 <h2 id="获取子字符串"><a href="#获取子字符串" class="headerlink" title="获取子字符串"></a>获取子字符串</h2><p>js 中获取子字符串有三种方法： <code>substring</code>, <code>substr</code>, <code>slice</code></p>
 <h3 id="str-slice-start-end"><a href="#str-slice-start-end" class="headerlink" title="str.slice(start[, end])"></a><code>str.slice(start[, end])</code></h3><p>返回从<code>start</code>到（但不包括）<code>end</code> 的字符串部分。如果没有第二个参数，<code>slice</code>运行到字符串的末尾</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"stringify"</span>;</span><br><span class="line">alert(str.slice(<span class="number">0</span>, <span class="number">5</span>)); <span class="comment">// 'strin', 从 0 到 5 的子字符串（不包括 5）</span></span><br><span class="line">alert(str.slice(<span class="number">0</span>, <span class="number">1</span>)); <span class="comment">// 's', 从 0 到 1，但不包括 1，所以只有在 0 的字符</span></span><br><span class="line">alert(str.slice(<span class="number">2</span>)); <span class="comment">// 从第二个位置直到结束</span></span><br></pre></td></tr></table></figure>
-<p><code>start/end</code> 有可能是复制，意思是位置从字符串结尾计算</p>
+<p><code>start/end</code> 有可能是负值，意思是位置从字符串结尾计算</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"stringify"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从右边的第四个位置开始，在右边的第一个位置结束</span></span><br><span class="line">alert(str.slice(<span class="number">-4</span>, <span class="number">-1</span>)); <span class="comment">// */!</span></span><br></pre></td></tr></table></figure>
 <h3 id="str-substring-start-end"><a href="#str-substring-start-end" class="headerlink" title="str.substring(start [, end])"></a><code>str.substring(start [, end])</code></h3><p>返回<code>start</code> 和 <code>end</code> <b>之间</b>的字符串部分，几乎与<code>slice</code>相同， 但它 允许 <code>start</code> 大于 <code>end</code>, 不支持负参数</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"stringify"</span>;</span><br><span class="line">str.substring(<span class="number">2</span>, <span class="number">6</span>); <span class="comment">// ring</span></span><br><span class="line">str.substring(<span class="number">6</span>, <span class="number">2</span>); <span class="comment">// ring</span></span><br></pre></td></tr></table></figure>

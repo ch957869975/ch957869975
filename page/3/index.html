@@ -144,6 +144,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-editor" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/16/editor/">9102年如何写一个自己的markdown在线编辑器</a>
+    </h1>
+  
+  <a href="/2019/02/16/editor/" class="archive-article-date">
+  	<time datetime="2019-02-16T07:17:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-16</time>
+</a> 
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+       <p>涵盖了大多数 markdown 语法的快捷操作，实时编译实时预览，支持直接导出 md 格式文件，支持微博图床。纯前端实现，不必担心数据被后台存储。</p>
+<h2 id="背景-amp-前言"><a href="#背景-amp-前言" class="headerlink" title="背景 &amp; 前言"></a>背景 &amp; 前言</h2><p>市面上一些 md 编辑器 有的有实时预览，比如掘金，没有操作按钮（有快捷键的哈)，用着不是太方便，而简书的操作按钮有的受限于简书钻的数量。事实上有道词典的 md 编辑器做的很好，但最近出现了我出现了卡顿、中文难以输入上去的问题，弃之。<br>所以干脆自己撸一个，可以满足自己写东西的需求。 <del>自己做的东西就算难用也得受着</del><br>由于手上没有 windows 设备，滚动条的样式还请自己修改下。</p>
+<hr>
+<h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><p><code>vue</code> <code>less</code> <code>iview</code> <code>markdown-it</code> <code>iconfont</code></p>
+<hr>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p><code>markdown-it-mark</code> 标记功能<br> <code>markdown-it-emoji</code> emoji 表情解析<br><code>highligh.js</code>代码高亮</p> 
+      <a class="article-more-a" href="/2019/02/16/editor/#more">more >></a>
+        
+    </div>
+    <div class="article-info article-info-index">
+       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
+        		</li>
+      		
+		</ul>
+	</div>
+ 
+ 
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2019/02/16/editor/">展开全文 >></a>
+      </p>
+       
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+ <aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside> 
+
+  
     <article id="post-diamond" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -406,72 +474,6 @@
 </aside> 
 
   
-    <article id="post-fibonacci" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/06/fibonacci/">斐波那契数列</a>
-    </h1>
-  
-  <a href="/2019/02/06/fibonacci/" class="archive-article-date">
-  	<time datetime="2019-02-06T09:48:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-06</time>
-</a> 
-    </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-       <p>ps：斐波那契数列数列，[1,2,3,5,8,13,21…],从第三项开始，当前项是前两项的和的一组数</p>
-<p>今天在微信群看到了这个面试题，求 第 100 个的斐波那契数</p>
-<h2 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h2><p>常见的写法是这样的</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci1</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span> || n === <span class="number">2</span>) <span class="keyword">return</span> n</span><br><span class="line">  <span class="keyword">return</span> fibonacci1(n - <span class="number">1</span>) + fibonacci1(n - <span class="number">2</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// fibonacci1(50) = 20365011074</span></span><br><span class="line"><span class="comment">// time = 140550.01586914062ms</span></span><br></pre></td></tr></table></figure> 
-      <a class="article-more-a" href="/2019/02/06/fibonacci/#more">more >></a>
-        
-    </div>
-    <div class="article-info article-info-index">
-       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
- 
- 
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2019/02/06/fibonacci/">展开全文 >></a>
-      </p>
-       
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
- <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside> 
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -564,15 +566,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,15 +586,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心情</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">

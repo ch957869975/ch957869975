@@ -9,13 +9,13 @@
     <link rel="dns-prefetch" href="https://ch957869975.github.io">
     <title>【前端基础】数字 | 记事本</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="js 中所有的数字都是以 64 位格式IEEE-754存储，也称为 双精度。记住这个词，后面会用到。 所有数字函数（包括 isFinite）中的空字符串或空格字符串均被视为 0。  进制共 35 个，从2进制（由 0 和 1 构成）到 36进制（由 0-9 和 a-z 构成），常见的有 二进制 八进制 十进制 十六进制，常用的有 十进制 十六进制。 十六进制 常用于颜色码的表示。 数字的其他表示方">
+    <meta name="description" content="js 中所有的数字都是以 64 位格式IEEE-754存储，也称为 双精度。记住这个词，后面会用到。所有数字函数（包括 isFinite）中的空字符串或空格字符串均被视为 0。">
 <meta name="keywords" content="前端基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【前端基础】数字">
 <meta property="og:url" content="https://ch957869975.github.io/2019/12/24/数字/index.html">
 <meta property="og:site_name" content="记事本">
-<meta property="og:description" content="js 中所有的数字都是以 64 位格式IEEE-754存储，也称为 双精度。记住这个词，后面会用到。 所有数字函数（包括 isFinite）中的空字符串或空格字符串均被视为 0。  进制共 35 个，从2进制（由 0 和 1 构成）到 36进制（由 0-9 和 a-z 构成），常见的有 二进制 八进制 十进制 十六进制，常用的有 十进制 十六进制。 十六进制 常用于颜色码的表示。 数字的其他表示方">
+<meta property="og:description" content="js 中所有的数字都是以 64 位格式IEEE-754存储，也称为 双精度。记住这个词，后面会用到。所有数字函数（包括 isFinite）中的空字符串或空格字符串均被视为 0。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://gitee.com/fenda-tz/images/raw/master/rKjfL2.png">
 <meta property="og:image" content="https://gitee.com/fenda-tz/images/raw/master/nOaHNX.png">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="https://gitee.com/fenda-tz/images/raw/master/1jI4Sj.png">
 <meta property="og:image" content="https://gitee.com/fenda-tz/images/raw/master/HnYjUQ.png">
 <meta property="og:image" content="https://gitee.com/fenda-tz/images/raw/master/1ibFNz.png">
-<meta property="og:updated_time" content="2019-12-24T10:01:05.191Z">
+<meta property="og:updated_time" content="2019-12-25T01:49:48.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【前端基础】数字">
-<meta name="twitter:description" content="js 中所有的数字都是以 64 位格式IEEE-754存储，也称为 双精度。记住这个词，后面会用到。 所有数字函数（包括 isFinite）中的空字符串或空格字符串均被视为 0。  进制共 35 个，从2进制（由 0 和 1 构成）到 36进制（由 0-9 和 a-z 构成），常见的有 二进制 八进制 十进制 十六进制，常用的有 十进制 十六进制。 十六进制 常用于颜色码的表示。 数字的其他表示方">
+<meta name="twitter:description" content="js 中所有的数字都是以 64 位格式IEEE-754存储，也称为 双精度。记住这个词，后面会用到。所有数字函数（包括 isFinite）中的空字符串或空格字符串均被视为 0。">
 <meta name="twitter:image" content="https://gitee.com/fenda-tz/images/raw/master/rKjfL2.png">  
     <link rel="icon" href="/assets/favicon.ico">
      <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
@@ -167,9 +167,8 @@
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-       <p>js 中所有的数字都是以 64 位格式<code>IEEE-754</code>存储，也称为 <code>双精度</code>。记住这个词，后面会用到。</p>
-<font color="orange">所有数字函数（包括 isFinite）中的空字符串或空格字符串均被视为 0。</font>
-
+       <p>js 中所有的数字都是以 64 位格式<code>IEEE-754</code>存储，也称为 <code>双精度</code>。记住这个词，后面会用到。<font color="orange">所有数字函数（包括 isFinite）中的空字符串或空格字符串均被视为 0。</font></p>
+<a id="more"></a>
 <h2 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h2><p>共 <code>35</code> 个，从<code>2进制</code>（由 0 和 1 构成）到 <code>36进制</code>（由 0-9 和 a-z 构成），常见的有 <code>二进制</code> <code>八进制</code> <code>十进制</code> <code>十六进制</code>，常用的有 <code>十进制</code> <code>十六进制</code>。</p>
 <p><code>十六进制</code> 常用于颜色码的表示。</p>
 <h2 id="数字的其他表示方法"><a href="#数字的其他表示方法" class="headerlink" title="数字的其他表示方法"></a>数字的其他表示方法</h2><p>在数字中， <code>e</code> 后面是正数表示 把数字 乘以 <code>1</code> 后面跟着指定数量的 <code>0</code>。如图</p>
@@ -242,9 +241,18 @@
  
 <nav id="article-nav">
   
+    <a href="/2019/12/25/逻辑运算符/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          【前端基础】逻辑运算符
+        
+      </div>
+    </a>
   
-    <a href="/2019/12/23/变量/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">【前端基础】变量</div>
+  
+    <a href="/2019/12/23/数据类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【前端基础】数据类型</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -383,11 +391,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">

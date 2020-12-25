@@ -86,12 +86,12 @@ wangyiyun: false
 changyan_appid: false
 changyan_conf: false
 gitalk:
-  enable: true
-  githubID: ch957869975
+  enable: false
+  githubID: zhuiyue132
   repo: "hexo-blog"
   ClientID: "9437e614335121f463ea"
   ClientSecret: "da6cca93c9cb5276024764856c90767392beb9aa"
-  adminUser: ch957869975
+  adminUser: zhuiyue132
   distractionFreeMode: true
 
 #4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的

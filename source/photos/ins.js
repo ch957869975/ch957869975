@@ -1,5 +1,5 @@
 /******/
-(function(modules) {
+(function (modules) {
   // webpackBootstrap
   /******/ // The module cache
   /******/
@@ -19,7 +19,7 @@
       /******/
       id: moduleId,
       /******/
-      loaded: false
+      loaded: false,
       /******/
     }); /******/ // Execute the module function
     /******/
@@ -51,7 +51,7 @@
   [
     /* 0 */
     /***/
-    function(module, exports, __webpack_require__) {
+    function (module, exports, __webpack_require__) {
       "use strict";
 
       __webpack_require__(1);
@@ -64,7 +64,7 @@
         return obj && obj.__esModule
           ? obj
           : {
-              default: obj
+              default: obj,
             };
       }
 
@@ -110,16 +110,16 @@
             var type = data.type[i] || "image";
 
             var minSrc =
-              "https://gitee.com/fenda-tz/blog-pic/raw/master/min_photos/" +
+              "https://gitee.com/zhuiyue132/blog-pic/raw/master/min_photos/" +
               data.link[i];
             if (type === "video") {
               minSrc =
-                "https://gitee.com/fenda-tz/blog-pic/raw/master/min_photos/" +
+                "https://gitee.com/zhuiyue132/blog-pic/raw/master/min_photos/" +
                 data.link[i].split(".")[0] +
                 ".png";
             }
             var src =
-              "https://gitee.com/fenda-tz/blog-pic/raw/master/photos/" +
+              "https://gitee.com/zhuiyue132/blog-pic/raw/master/photos/" +
               data.link[i];
             var target = src;
 
@@ -184,7 +184,7 @@
               year: y,
               month: m,
               srclist: [src],
-              text: [text]
+              text: [text],
             };
           }
         }
@@ -196,7 +196,7 @@
           var xhr = new XMLHttpRequest();
           xhr.open("GET", "./data.json?t=" + +new Date(), true);
 
-          xhr.onload = function() {
+          xhr.onload = function () {
             if (this.status >= 200 && this.status < 300) {
               var res = JSON.parse(this.response);
               searchData = res;
@@ -206,7 +206,7 @@
             }
           };
 
-          xhr.onerror = function() {
+          xhr.onerror = function () {
             console.error(this.statusText);
           };
 
@@ -218,10 +218,10 @@
 
       var Ins = {
         init: function init() {
-          loadData(function(data) {
+          loadData(function (data) {
             render(data);
           });
-        }
+        },
       };
 
       Ins.init();
@@ -232,9 +232,9 @@
     },
     /* 1 */
     /***/
-    function(module, exports, __webpack_require__) {
+    function (module, exports, __webpack_require__) {
       /* WEBPACK VAR INJECTION */
-      (function(global) {
+      (function (global) {
         "use strict";
 
         var inViewport = __webpack_require__(3);
@@ -258,7 +258,7 @@
             {
               offset: 333,
               src: "data-src",
-              container: false
+              container: false,
             },
             opts || {}
           );
@@ -309,7 +309,7 @@
           }
 
           var original = global[fullname].prototype.getAttribute;
-          global[fullname].prototype.getAttribute = function(name) {
+          global[fullname].prototype.getAttribute = function (name) {
             if (name === "src") {
               var realSrc;
               for (var i = 0, max = lazyAttrs.length; i < max; i++) {
@@ -350,7 +350,7 @@
         /* WEBPACK VAR INJECTION */
       }.call(
         exports,
-        (function() {
+        (function () {
           return this;
         })()
       ));
@@ -359,7 +359,7 @@
     },
     /* 2 */
     /***/
-    function(module, exports) {
+    function (module, exports) {
       "use strict";
 
       var initPhotoSwipeFromDOM = function initPhotoSwipeFromDOM(
@@ -397,7 +397,7 @@
             item = {
               src: linkEl.getAttribute("href"),
               w: parseInt(size[0], 10),
-              h: parseInt(size[1], 10)
+              h: parseInt(size[1], 10),
             };
 
             if (figureEl.children.length > 1) {
@@ -438,7 +438,7 @@
           var eTarget = e.target || e.srcElement;
 
           // find root element of slide
-          var clickedListItem = closest(eTarget, function(el) {
+          var clickedListItem = closest(eTarget, function (el) {
             return el.tagName && el.tagName.toUpperCase() === "FIGURE";
           });
 
@@ -531,9 +531,9 @@
               return {
                 x: rect.left,
                 y: rect.top + pageYScroll,
-                w: rect.width
+                w: rect.width,
               };
-            }
+            },
           };
 
           // PhotoSwipe opened from URL
@@ -622,12 +622,12 @@
         }
       };
 
-      var Viewer = (function() {
+      var Viewer = (function () {
         function init() {
           initPhotoSwipeFromDOM(".photos");
         }
         return {
-          init: init
+          init: init,
         };
       })();
 
@@ -637,9 +637,9 @@
     },
     /* 3 */
     /***/
-    function(module, exports) {
+    function (module, exports) {
       /* WEBPACK VAR INJECTION */
-      (function(global) {
+      (function (global) {
         module.exports = inViewport;
 
         var instances = [];
@@ -649,7 +649,7 @@
         function inViewport(elt, params, cb) {
           var opts = {
             container: global.document.body,
-            offset: 0
+            offset: 0,
           };
 
           if (params === undefined || typeof params === "function") {
@@ -681,7 +681,7 @@
 
         function debounce(func, wait, immediate) {
           var timeout;
-          return function() {
+          return function () {
             var context = this,
               args = arguments;
             var callNow = immediate && !timeout;
@@ -697,19 +697,19 @@
         }
 
         // https://github.com/jquery/sizzle/blob/3136f48b90e3edc84cbaaa6f6f7734ef03775a07/sizzle.js#L708
-        var contains = function() {
+        var contains = function () {
           if (!global.document) {
             return true;
           }
           return global.document.documentElement.compareDocumentPosition
-            ? function(a, b) {
+            ? function (a, b) {
                 return !!(a.compareDocumentPosition(b) & 16);
               }
             : global.document.documentElement.contains
-            ? function(a, b) {
+            ? function (a, b) {
                 return a !== b && (a.contains ? a.contains(b) : false);
               }
-            : function(a, b) {
+            : function (a, b) {
                 while ((b = b.parentNode)) {
                   if (b === a) {
                     return true;
@@ -763,7 +763,7 @@
 
             return {
               watch: watch,
-              dispose: dispose
+              dispose: dispose,
             };
           }
 
@@ -796,7 +796,7 @@
                 top: -offset,
                 left: -offset,
                 right: global.document.documentElement.clientWidth + offset,
-                bottom: global.document.documentElement.clientHeight + offset
+                bottom: global.document.documentElement.clientHeight + offset,
               };
             } else {
               var containerRect = container.getBoundingClientRect();
@@ -804,7 +804,7 @@
                 top: containerRect.top - offset,
                 left: containerRect.left - offset,
                 right: containerRect.right + offset,
-                bottom: containerRect.bottom + offset
+                bottom: containerRect.bottom + offset,
               };
             }
 
@@ -820,7 +820,7 @@
 
           return {
             container: container,
-            isInViewport: isInViewport
+            isInViewport: isInViewport,
           };
         }
 
@@ -854,7 +854,7 @@
           }
 
           function checkAll(cb) {
-            return function() {
+            return function () {
               for (var i = watches.length - 1; i >= 0; i--) {
                 cb.apply(this, watches[i]);
               }
@@ -865,7 +865,7 @@
             add: add,
             remove: remove,
             isWatched: isWatched,
-            checkAll: checkAll
+            checkAll: checkAll,
           };
         }
 
@@ -878,7 +878,7 @@
             childList: true,
             subtree: true,
             // changes like style/width/height/display will be catched
-            attributes: true
+            attributes: true,
           });
 
           function watch(mutations) {
@@ -902,13 +902,13 @@
         /* WEBPACK VAR INJECTION */
       }.call(
         exports,
-        (function() {
+        (function () {
           return this;
         })()
       ));
 
       /***/
-    }
+    },
     /******/
   ]
 );
